@@ -1,0 +1,3 @@
+Allow Users to Register|on
+Default Group|normal
+Activate User on Register|on
