@@ -1,0 +1,100 @@
+<HTML>
+<BODY>
+<CENTER><FONT SIZE=+2>Notes for Dan-O (v1.01) Installation</FONT></CENTER>
+<P>
+First and foremost, like any CGI-based application the prerequisite is that you do have access to a /cgi-bin/ directory of some sort... you do, don't you?  If not, the rest of this page is pretty much a moot point. :)
+<P>
+If you're not sure whether or not you have the ability to use Server Side Includes, try this test.  Copy/paste the following five lines into a new page, name it '<TT>test.shtml</TT>' and upload it to your server.
+<P>
+<TT>
+&lt;HTML&gt;<BR>
+&lt;BODY&gt;<BR>
+I uploaded this page on &lt;!--#echo var=&quot;LAST_MODIFIED&quot;--&gt;.<BR>
+&lt;/BODY&gt;<BR>
+&lt;/HTML&gt;
+</TT>
+<P>
+Check it out with a browser (errr.. Navigator.. whatever...), if you get back a date (in place of the funky #echo stuff), you've got SSI capability, if not, skip to the <A HREF="#nossi">'What to do if you don't have SSI'</A> section.  Assuming you're still here (first, fold your hands and say a prayer of thanks to the Deity of your choice) now, rename the file to '<TT>test.html</TT>' and bring up the page again.  If you *still* get a date a) I'm darned impressed and b) you're server's probably not running as fast as it could (not my problem, but.. well.. hey, that's the breaks).  Now that we're done amusing ourselves.. let's get on with it. 
+<P>
+Configs...
+<P>
+<TT>$SSI = 1;</TT><BR>
+This tells the script that we're running it from a Server Side Include.
+<P>
+<A NAME="logfile"></A>
+<TT>$logfile = "/absolute/path/to/dan_o.dat";</TT><BR>
+Replace the path statement with the absolute machine path to where you want your logfile kept.  As a gross generalization, keeping it in the /cgi-bin/ will tend to keep the log fairly private and allow you to fetch it via FTP while keeping it within the HTML document path will allow it to be found/read by you, your Uncle Fred, and just about any Bot that hits your pages.  Again, a gross generalization, but you get the gist...
+<P>
+<A NAME="exclude"></A>
+<TT>$exclude = 0;</TT><BR>
+This part is <I>only</I> for those of you who have <B>static</B> IP addresses as either a dialup user or as part of a corporate network.  Since most providers use dynamic addressing, leave this as '0' unless you're <I>positive</I> you have a static IP, in which case change this to...<BR>
+<TT>$exclude = 1;</TT><BR>
+(unless you purposefully want to log yourself too! ;)
+<P>
+If you've changed $exclude to '1', then use $my_addr to hold your dialup IP address (or machine name, if you're provider has given you one and your server has reverse DNS turned on).  Don't confuse this address with the IP of your host, $my_addr is <B>only</B> for your dialup/Ethernet IP address, nothing more, nothing less. Assuming that $exclude = 1;, then $my_addr should look like...<BR>
+<TT>$my_addr = "206.121.5.9";</TT><BR>
+..or..<BR>
+<TT>$my_addr = "yacko.animainiacs.com";</TT> (unless you're of the fairer gender, in which case it'd probably be "dot.animainiacs.com" .. alas, I digress... ;)
+<P><I><B>Note:</B> these addresses are <B>examples only</B>, use <B>your</B> personal address in place of these!</I>
+<P>
+If you're calling the script from a SSI, skip to <A HREF="#finish">Finishing the Install</A> now.
+<HR WIDTH=50%>
+<A NAME="nossi"></A>
+<P>
+The biggest drawback to not having Server Side Includes is that you will <B>not</B> have the ability to tell where the user hit you from .. but you'll still get the rest of the information. 
+With that out of the way, here's the configuration for Non-SSI use.
+<P>
+<TT>$SSI = 0;</TT><BR>
+<P>
+See the <A HREF="#exclude">exclude portion</A> of the setup for getting $exclude and $my_addr correct.
+<P>
+See the <A HREF="#logfile">logfile portion</A> of the setup for setting the path to the log.
+<P>
+<TT>$HomeDirURL = "http://www.yourdomain.com/your/path/";</TT><BR>
+This is the base URL (and any subdirectories as needed) for the next page to be brought up when the script is run.  The implimentation of this will be explained later.. just trust me for now. ;)  If your URL looks like http://www.joeblow.com/~user/, then $HomeDirURL = "http://www.joeblow.com/~user/";
+<P>
+<TT>$nextfile = "file.html";</TT><BR>
+The name of the next file you want the user transported to at the end of the script if you want the user to go to 'page2.html', then $nextfile = "page2.html";
+<P>
+<A NAME="finish"></A>
+First off, change the permission of dan_o.pl (or .cgi if it's so named..) with this..<BR>
+<TT>chmod 755 dan_o.pl</TT><BR>
+Which sets the script as executable, otherwise you're going to get server errors all day long.
+<P>
+<CENTER>Hokey Dokie.. now that we're all configured, let's look at how to call the script..<BR>
+[<A HREF="#ssic">Calling from a SSI</A>] [<A HREF="#norm">Calling from a *normal* page</A>]</CENTER>
+<P>
+<A NAME="ssic"></A>
+<CENTER><FONT SIZE=+1>SSI Use</FONT></CENTER>
+<P>
+Keeping in mind that the HTML document has to have the .shtml extension (unless you saw otherwise as explored at the top of this page), there are two SSI tags we can use...<BR>
+<TT>&lt;!--#exec cgi=&quot;/cgi-bin/dan_o.pl&quot;--&gt;</TT><BR>
+..or..<BR>
+<TT>&lt;!--#exec cmd=&quot;/absolute/path/from/root/to/cgi-bin/dan_o.pl&quot;--&gt;</TT>
+<P>
+The first one assumes that you have a Virtual (or Real) Hosting and that /cgi-bin/ is found at the root of that host.  The second one means that you enter the <B>entire</B> path (usually found at the top of your FTP client) from the root of the host to the dan_o script.  Some servers will take either, some don't like #exec cgi= but will take #exec cmd=, so if you get this lovely message...
+<P><CENTER>[An error as occurred while processing this directive]</CENTER><BR>
+<P>play with the tags to see which one will work for you.  If you're still getting the error message, triple check your path information or drop your SysAdmin a nice note.
+<P>
+<A NAME="norm"></A>
+<CENTER><FONT SIZE=+1>Non-SSI Use</FONT></CENTER>
+<P>
+The easiest way to run Dan-O without SSI's is to create a &lt;FORM&gt; area like this...<BR>
+<TT>
+&lt;FORM METHOD=POST ACTION=&quot;/cgi-bin/dan_o.pl"&gt;<BR>
+&lt;INPUT TYPE=SUBMIT VALUE=&quot;Click to Continue&quot;&gt;<BR>
+&lt;/FORM&gt;
+</TT>
+<P>
+This runs the script and since we properly set $HomeDirURL and $nextfile (you did, didn't you?), the user is *magically* transported to the page we wanted them to go to!  It's not as elegant or transparent as using SSI's but if it's all you've got, then it's better than nothing, right?!
+<P>
+The last step is simply to create an empty file named 'dan_o.dat', upload it to the *exact* place you specified in the <A HREF="#logfile">$logfile = </A> area and change the permission to...<BR>
+<TT>chmod 666 dan_o.dat</TT><BR>
+..or if you're Telnet happy and only want to FTP the logfile back to you..<BR>
+<TT>chmod o+w dan_o.dat</TT><BR>
+Ignore the 'chown' stuff in the README docs .. unless you have SU permission on the server, in which case you *probably* aren't reading this anyway. ;)
+<P>
+Happy Logging!<BR>
+<I>Notes to <A HREF="mailto:spider@w3works.com">Spider</A>.</I>
+</BODY>
+</HTML>
