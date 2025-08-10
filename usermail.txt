@@ -1,0 +1,11 @@
+Hi there [name],
+
+      Thanks for signing my guestbook on [date] [time]!
+
+      
+
+      Take care,
+
+      
+
+      Admin
