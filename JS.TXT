@@ -1,0 +1,50 @@
+-----------------------------------------------------------------------------
+Add the following two parts of JavaScript to all forms where you wish to 
+read out the affiliate identification.
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+JavaScript placed into the HEAD (before the tag </head>):
+-----------------------------------------------------------------------------
+
+<SCRIPT language="JavaScript">
+<!--
+
+function getCookieVal (offset) {
+   var endstr = document.cookie.indexOf (";", offset);
+   if (endstr == -1)
+   endstr = document.cookie.length;
+   return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie(name) {
+   var arg = name + "=";
+   var alen = arg.length;
+   var clen = document.cookie.length;
+   var i = 0;
+   while (i <  clen) {
+      var j = i + alen;
+      if (document.cookie.substring(i, j) == arg)
+      return getCookieVal (j);
+      i = document.cookie.indexOf(" ", i) + 1;
+      if (i == 0) break;
+   }
+   return null;
+}
+
+//-->
+</SCRIPT>
+
+
+
+-----------------------------------------------------------------------------
+JavaScript placed inside the form (it generates a hidden field containing
+the affiliate identification):
+-----------------------------------------------------------------------------
+
+<SCRIPT language="JavaScript">
+<!--
+
+document.write ("<input type=hidden name='AFFILIATE_ID' value=\"" + GetCookie("AFFILIATE") + "\">");
+
+//-->
+</SCRIPT>
