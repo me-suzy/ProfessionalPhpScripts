@@ -1,0 +1,43 @@
+HISTORY FILE FOR CGIMailer for Windows95/NT4.0.
+
+	* version 1.00 January 1998.
+	
+		- This is original version.
+
+	* version 1.10 March 1998.
+
+		- Added automatic POST/GET method recognition.
+
+		- Added Bcc field.
+
+		- Configuration file variables are now proccessed in fixed order as
+		follows:
+			- ERRTEMPLATE
+			- TEMPLATE
+			- MSGTEMPLATE
+			- TO
+			- FROM
+			- CC
+			- BCC
+			- GATEWAY
+			- SUBJECT
+			- TIMEOUT
+			- PORT
+			- DEBUG
+		This prevents CGIMailer to use built in messages for error in configuration file
+		when an ERRTEMPLATE variable is given in configuration file - so You don't have
+		to put ERRTEMPLATE variable on begining of configuration file.
+
+		- Improved robustness and reliability.
+
+	* version 1.11 May 1998.
+
+		- Some bugs were corrected
+
+	* version 1.20 Jun 1998.
+
+		- Added SAVETOFILE variable to configuration file.
+		SAVETOFILE allows to specify file in wich input from form will be saved.
+
+
+
