@@ -1,0 +1,38 @@
+<html><head>
+<title>
+Sample for CGIMailer
+</title>
+</head>
+<body bgcolor=#ffffff text=#000000>
+<font size=+3 color=#ff0000>
+CGIMailer sample
+</font>
+<hr>
+
+<form method=POST action="http://localhost/cgi-bin/cgimail.exe?sample3.cf">
+
+TEMPLATE=<input size=20 name="TEMPLATE" value=sample3.htt><br>
+ERRTEMPLATE=<input size=20 name="ERRTEMPLATE" value=err.htt><br>
+MSGTEMPLATE=<input size=20 name="MSGTEMPLATE"><br>
+GATEWAY=<input size=20 name="GATEWAY"><br>
+PORT=<input size=5 name="PORT" value=25><br>
+TIMEOUT=<input size=5 name="TIMEOUT" value=300><br>
+DEBUG=<input type=CHECKBOX name="DEBUG" value="YES">Yes<br>
+<hr>
+
+FROM=<input size=20 name="FROM"><br>
+TO=<input size=20 name="TO" value="boban@student.math.hr"><br>
+CC=<input size=20 name="CC"><br>
+SUBJECT=<input size=20 name="SUBJECT" value="CGIMailer - sample3"><br>
+<br>
+Message:<br>
+<textarea cols=40 rows=10 name="REQ.MESSAGE">
+</textarea><br>
+
+<input type=reset value="Clear">
+<input type=submit value="Send">
+</form>
+
+<hr>
+</body>
+</html>
