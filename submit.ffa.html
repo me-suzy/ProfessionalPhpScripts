@@ -1,0 +1,95 @@
+<html>
+<head><title>SimpleSubmit! FFA Links Page Example</title></head>
+<body bgcolor="#6699cc" TEXT="#000000" LINK="#0000ff" VLINK="#0000ff" ALINK="#ff0000">
+<font face="Arial,Helvetica" size="2"><!--- NOTE TO SERVER ADMIN: ---><!--- It is recommended that you DON'T display the results inside a table. ---><!--- The submission results will stream from the server to the browser, allowing ---><!--- you to watch.  If you put it inside a table, many browsers won't display any ---><!--- of the the text until the entire table has loaded. --->
+<DIV align=center>
+<table width="100%" bgcolor="#ffcc33" cellspacing="0" cellpadding="5" BORDERCOLOR="#003399" border="1"><tr><td>
+<B><font color="#003399" face="'Arial Black',Arial,Helvetica" size="5">
+SimpleSubmit! FFA Links Page Example
+</font></B>
+</td></tr></table></DIV>
+<p>
+This page provides an example for adding Free For All Links pages to
+your submission database.  If you open submit.tab using a text editor,
+you'll see that there is an engine called VerySimpleFFA.  (see <A HREF="submit.readme.html">submit.readme.html</A>
+for more information about editing the .tab file)
+<p>
+In addition to editing the tabfile, you'll need to create a custom front page
+to the script that has all of the extra variables needed by your FFA links page.
+In the example below, Title and Section are needed by the FFA links page in 
+addition to the usual URL and Email fields.
+<p>
+<form action='/cgi-bin/submit.cgi' method='get'>
+<div align='center'>&nbsp;</div>
+<DIV align=center><table cellspacing='0' cellpadding='5' border='0'>
+  <TBODY><tr>
+<td colspan='2'>
+<p>
+<table bgcolor='#003399' width="100%" cellspacing='0' cellpadding='2'><tr>
+          <td>
+<B><font color='#ffcc33' face='Arial,Helvetica' size='2'>
+1. Enter your URL and Email:
+&nbsp;</font></B>
+</td></tr></table></p>
+</td>
+</tr><tr valign='center'>
+<td><font color='#000000' face='Arial,Helvetica' size='2'><B>My URL:</B><br><FONT SIZE='1'>(One Per Line)</FONT></font></td>
+<td><TEXTAREA cols=42 name=url rows=3 wrap=off></TEXTAREA></td>
+</tr><tr>
+<td><B><font color='#000000' face='Arial,Helvetica' size='2'>My Email:</font></B></td>
+<td><input name='email' size='45' 
+ ></td>
+</tr><tr>
+<td><B><font color='#000000' face='Arial,Helvetica' size='2'>Site Title:</font></B></td>
+<td><input name='title' size='45' 
+ ></td>
+</tr><tr>
+<td><B><font color='#000000' face='Arial,Helvetica' size='2'>Section:</font></B></td>
+<td><select name="section">
+<option> Business
+<option> Computers
+<option> Education 
+<option> Entertainment
+<option> Government
+<option> Personal
+<option selected> Miscellaneous</option> 
+</select></td>
+</tr><tr>
+<td colspan=2 align='middle'><input type='submit' value="    OK    ">
+<input type='reset' value='Cancel'></td>
+</tr><tr>
+<td colspan=2><font color='#000000' face='Arial,Helvetica' size='2'>
+<p>
+<table bgcolor='#003399' width="100%" cellspacing='0' cellpadding='2'><tr>
+          <td>
+<B><font color='#ffcc33' face='Arial,Helvetica' size='2'>
+2. Override Default Search Engines: (optional)
+&nbsp;</font></B>
+</td></tr></table>
+</font></p></TD></TR><tr>
+<td colspan=2><select name='engines' size='5' multiple>
+<option value='VerySimpleFFA' selected>VerySimpleFFA: General FFA</option>
+</select></td>
+</tr>
+<tr>
+<td colspan=2><font color='#000000' face='Arial,Helvetica' size='2'>
+<p>
+<table bgcolor='#003399' width="100%" cellspacing='0' cellpadding='2'><tr>
+          <td>
+<B><font color='#ffcc33' face='Arial,Helvetica' size='2'>
+&nbsp;</font></B>
+</td></tr></table>
+</font></P></td>
+</tr></TBODY></TABLE></DIV></FORM>
+
+<hr>
+
+<a href="http://www.verysimple.com/scripts/">
+<img src="http://www.verysimple.com/images/vspower.gif" border=0 width=87 height=31>
+</a>
+
+<p>
+
+</font></P>
+</body>
+</html>
