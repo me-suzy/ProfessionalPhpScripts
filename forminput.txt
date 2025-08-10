@@ -1,0 +1,23 @@
+Copy and paste the following code into your web page(s).  This will be the form input field that allows your members/users to enter their email address, and submit it to search the database for their account.
+
+Copy from the <FORM tag to the </FORM> tag.
+############################################
+
+<FORM ACTION="/cgi-bin/path/to/subscribe.pl" METHOD="POST">
+    <TABLE BORDER="0">
+      <TBODY>
+      <TR>
+        <TD>
+        <CENTER><FONT SIZE="-2" FACE="verdana, arial, helvetica"><B>Join our
+        mailing list<BR>
+         for new and<BR>
+        updated scripts!</B></FONT><BR>
+        <INPUT TYPE="TEXT" SIZE="10" NAME="email"></CENTER><INPUT TYPE="RADIO" NAME="subscribe" VALUE="subscribe" CHECKED="CHECKED" ALIGN="TOP">
+        <FONT SIZE="-2" FACE="verdana, arial, helvetica">subscribe</FONT><BR>
+        <INPUT TYPE="RADIO" NAME="subscribe" VALUE="unsubscribe" ALIGN="TOP">
+        <FONT SIZE="-2" FACE="verdana, arial, helvetica">unsubscribe</FONT><BR>
+        <CENTER><INPUT TYPE="SUBMIT" VALUE="  Submit  "></CENTER></TD>
+      </TR></TBODY>
+    </TABLE></FORM>
+
+############################################
