@@ -1,0 +1,646 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<HTML>
+<HEAD>
+	<TITLE>SimpleSubmit! Installation Instructions</TITLE>
+</HEAD>
+
+<body marginwidth=0 marginheight=0 leftmargin=0 topmargin=0 text="Navy" link="#FF8000" vlink="#FF8000" alink="#00FF00">
+
+
+<table width=100% cellspacing=0 cellpadding=10 border=0>
+<tr valign=top>
+
+<td width=20% bgcolor="Navy">
+<FONT FACE="Arial, Helvetica" SIZE="2">
+<A HREF="#install">Installation</A><p>
+<A HREF="#forms">Sample Forms</A><p>
+<A HREF="#frames">Customize the Frames</A><p>
+<A HREF="#thankyou">Customize the Thank You Message</A><p>
+<A HREF="#engines">Adding Engines</A><p>
+</FONT>
+</td>
+
+<td width=80%>
+<FONT FACE="Arial, Helvetica" SIZE="2">
+
+<CENTER><B>
+<FONT SIZE="7" COLOR="#00FF00">SimpleSubmit!</FONT><br>
+<FONT COLOR="Navy">The fastest, easiest & cheapest way to submit your site!</FONT>
+</B></CENTER>
+
+<p>
+<A NAME="install"></A>
+<B><font size="5" color="#FF8000">Installation Instructions:</font></B>
+
+<p>
+<B><FONT SIZE="3">1. Decompressing and transferring the files:</FONT></B>
+<p>
+submit.zip contains 4 files:
+<UL>
+<LI><B>submit.html</B>: This instruction file
+<LI><B>submit.cgi</B>: The script
+<LI><B>submit.dat</B>: The DAT file containing the search engine URLs
+<LI><B>submit.tha</B>: The Thank You message for email replies
+</UL>
+
+Move <B>submit.cgi</B>, <B>submit.dat</B> and <B>submit.tha</B>
+into your /cgi-bin/ directory (or any other directory that allows
+scripts to execute).  Move <B>submit.html</B> (this file) to a
+directory that is available for browsing through a web browser.
+<p>
+<b>NOTE:</b> if you use FTP to transfer the files, be sure to use ASCII
+mode and not Binary mode, as Binary will add a bunch of ^M characters to
+the script and it will not work!
+
+<p>
+<b><FONT SIZE="3">2. Make sure the file permissions are correct on submit.cgi.</FONT></b>
+<p>
+The file <B>submit.cgi</B> needs to be readable and executable by everyone.
+You can type "chmod 705 submit.cgi" at the telnet prompt to do this,
+or set the permissions using your FTP program.
+<p>
+The files <B>submit.dat</B> and <B>submit.tha</B> need only be readable.
+You probably don't need to do anything to these files, and SimpleSubmit
+will tell you if the DAT file is not readable.  If you do need to 
+change them, You can type "chmod 604 submit.dat"  and "chmod 604 submit.dat"
+at the telnet prompt, or set the permissions using your FTP program.
+
+<p>
+<b><FONT SIZE="3">3. The top line of submit.cgi may need to be altered:</FONT></b>
+<p>
+#! /usr/bin/perl
+<p>
+This is used to tell the script where perl is located on your server.
+If you don't know, you can type "which perl" at the telnet prompt, or
+contact your system administrator.
+<p>
+
+<b><FONT SIZE="3">4. Edit the configuration variables:</FONT></b>
+
+<p>
+There are  a total of five configuration variables in <B>submit.cgi</B>,
+but you will likely only have to edit one of them: @referers.
+
+<p>
+<B>@referers</B> is an array of domains that can use this script.  This is a
+security feature so that other webmasters cannot 'freeload' off of your
+script.  Add your own domain name here, or the domain name of your
+web host.  You can add as many domains as you like, separated by comas.
+<p>
+If you would rather allow anyone to use your script and not implement the security,
+then you can simply comment out this line by putting a # in front of it.
+<p>
+<B>$script_url</B> is the URL to the script on your server.
+This line only needs to be modified if you changed the name of the script
+or are getting 404 errors.  If you are, try using the full URL:
+<i>http://www.domain.com/cgi-bin/submit.cgi</i>
+
+<p>
+<B>$dat_location</B> is the server path to the DAT file.  As long as the
+DAT file is in the same directory as the script and you did not
+rename it, you shouldn't have to edit this line.  SimpleSubmit will
+tell you if it cannot find the dat file, in which case you may need
+to use the full path (ex. <i>/usr/www/accountname/cgi-bin/submit.dat</i>).
+
+<p>
+<B>$sendmail</B> is the location of sendmail on your server.  You only
+need to set this variable if you want to send a Thank You message
+to your visitors when they use the script.  To find out the location
+of sendmail on your server, type "which sendmail" at the telnet
+prompt or ask your system administrator.
+
+<p>
+<B>$thank_you</B> is the location of the Thank You message.  As long as the
+Thank You file is in the same directory as the script and you did not
+rename it, you shouldn't have to edit this line.  If you continue to
+get the default thank-you message even though you have created a custom
+one, then you may need to use the full path (ex. <i>/usr/www/accountname/cgi-bin/submit.tha</i>).
+
+<p>
+<b><FONT SIZE="3">5. Edit the HTML form:</FONT></b>
+<p>
+This is the last step!  You may need to edit the <B>action</B> line in the form
+to point to submit.cgi on your server.  If you put submit.cgi in /cgi-bin/
+then you may not have to edit this line.
+<p>
+View the source code of this document and copy the form that you
+wish to use on your site.  Please feel free to be creative when designing
+the page!  You do not have to use the SimpleSubmit! design, but a link
+to the script page would be appreciated: http://www.verysimple.com/scripts/
+<p>
+If you have questions or problems, please visit:
+<a href="http://www.verysimple.com/scripts/">http://www.verysimple.com/scripts/</a>  
+
+
+<p>
+<A NAME="forms"></A>
+<b><font size="5" color="#FF8000">Sample Forms</font></b>
+<p>
+The following are some example forms that you can use on your
+website.  You may want to modify the design of these forms to match
+your own site.
+<p>
+The script options: Confirmation Page,  Email Thank You, and the
+Choice of Engines are all customizable.  You can decide to give
+your visitor complete control - or make some of the options
+automatic (by making the form variables hidden).
+<p>
+The advantage to making the variables hidden, is that your visitor
+has less choices, therefore it is easier to use.  Also, you may
+always want an email message sent to attract more return visits
+to your site.
+<p>
+The HTML code for each of these forms is commented and explains what
+all of the variables do.  View the source code of this page and
+copy -n- paste it onto your own web page.  Remeber, you don't have
+to use these forms exactly as they are, you can alter the hidden
+variables to create a form that works exactly the way you want.
+
+<p>
+
+<!--- ******************************* --->
+<!--- ***** BEGIN SAMPLE FORM 1 ***** --->
+<!--- ******************************* --->
+
+<b><font size="3">SimpleSubmit! Sample Form 1</font></b>
+
+<p>
+This sample form contains all the fields needed to allow your visitors
+complete control.  Please modify the design of this page to match your own
+site and be creative!
+
+<p>
+
+<!--- Begining of the form.  Be sure to change the action value --->
+<!--- to point to submit.cgi on your server. --->
+
+<form action="/cgi-bin/submit.cgi" method=POST>
+
+<table cellspacing=1 cellpadding=1 border=1>
+
+<!--- variable url is where we ask for the URL --->
+
+<tr valign=top>
+<td><b>Website URL:</b></td>
+<td><input type="text"  SIZE=30 name="url" VALUE="http://"></td>
+</tr>
+
+<!--- variable email is where we ask for the email address --->
+
+
+<tr valign=top>
+<td><b>Email Address:</b></b></td>
+<td><input type="text" SIZE=30 name="email"></td>
+</tr>
+
+<!--- The action variable controls whether there will be a --->
+<!--- confirmation page.  The two allowed values are submit --->
+<!--- and confirm --->
+
+<tr valign=top>
+<td><b>Confirm Before Submiting?</b></td>
+<td>
+<input type="Radio" name="action" value="confirm"> Yes.
+<input type="Radio" name="action" value="submit" checked> No.
+</td>
+</tr>
+
+<!--- The thankyou variable controls whether there will be a --->
+<!--- Thank You message.  Allowed values are yes or blank (null) --->
+
+
+<tr valign=top>
+<td><b>Send Email Confiramtion?</b></td>
+<td>
+<input type="Checkbox" name="thankyou" value="Yes" checked> Yes
+</td>
+</tr>
+
+</table>
+
+<!--- The engines variable allows you to select which engines --->
+<!--- to use.  If no engines are selected, or there is no --->
+<!--- engines variable on the page, then the default selection --->
+<!--- will be used.  (The default selection is defined in the --->
+<!--- DAT file) --->
+
+<p>
+<table width=100% cellpadding=1 cellspacing=1 border=1>
+<tr valign=top bgcolor="#FF8000">
+<td><b><font color="#FFFFFF">Default Engines</font></b></td>
+<td><b><font color="#FFFFFF">Additional Engines</font></b></td>
+</tr>
+<tr valign=top>
+<td>
+<input type="Checkbox" name="engines" value="altavista" checked><a href="http://altavista.digital.com/">altavista</a><br>
+<input type="Checkbox" name="engines" value="aol" checked><a href="http://netfind.aol.com/">aol</a><br>
+<input type="Checkbox" name="engines" value="excite" checked><a href="http://www.excite.com/">excite</a><br>
+<input type="Checkbox" name="engines" value="hotbot" checked><a href="http://www.hotbot.com/">hotbot</a><br>
+<input type="Checkbox" name="engines" value="infoseek" checked><a href="http://www.infoseek.com/">infoseek</a><br>
+<input type="Checkbox" name="engines" value="nlsearch" checked><a href="http://www.nlsearch.com/">nlsearch</a><br>
+<input type="Checkbox" name="engines" value="planetsearch" checked><a href="http://www.planetsearch.com/">planetsearch</a><br>
+<input type="Checkbox" name="engines" value="webcrawler" checked><a href="http://www.webcrawler.com/">webcrawler</a><br>
+<input type="Checkbox" name="engines" value="whatyouseek" checked><a href="http://www.whatyouseek.com/">whatyouseek</a><br>
+</td>
+<td>
+<input type="Checkbox" name="engines" value="google"><a href="http://www.google.com/">google</a><br>
+<input type="Checkbox" name="engines" value="infomak"><a href="http://www.infomak.com/">infomak</a><br>
+<input type="Checkbox" name="engines" value="intersearch-de"><a href="http://www.intersearch.de/">intersearch</a> (.de)<br>
+<input type="Checkbox" name="engines" value="intersearch-au"><a href="http://austria.intersearch.net/">intersearch</a> (.au)<br>
+<input type="Checkbox" name="engines" value="altavista-au"><a href="http://www.altavista.yellowpages.com.au/">altavista</a> (.au)<br>
+<input type="Checkbox" name="engines" value="webwombat"><a href="http://www.webwombat.com/">webwombat</a> (.au .nz)<br>
+<input type="Checkbox" name="engines" value="anzwers"><a href="http://www.anzwers.com/">anzwers</a> (.au .nz)<br>
+<input type="Checkbox" name="engines" value="voila"><a href="http://www.voila.com/">voila</a> (.fr)<br>
+<input type="Checkbox" name="engines" value="euroferret"><a href="http://www.euroferret.com/">euroferret</a><br>
+</td>
+</tr>
+</table>
+
+<p>
+<input type="submit" value="Submit Your Site!">
+
+</form>
+
+<p><hr noshade><p>
+
+<!--- ******************************* --->
+<!--- ***** BEGIN SAMPLE FORM 2 ***** --->
+<!--- ******************************* --->
+
+<b><font size="3">SimpleSubmit! Sample Form 2</font></b>
+
+<p>
+This sample form contains the fields needed so that there will <i>always</i>
+be a confirmation page and an email Thank You message will
+<I>always</I> be sent.
+<p>
+
+<!--- Begining of the form.  Be sure to change the action value --->
+<!--- to point to submit.cgi on your server. --->
+
+<form action="/cgi-bin/submit.cgi" method=POST>
+
+<table cellspacing=1 cellpadding=1 border=1>
+
+<tr valign=top>
+<td><b>Website URL:</b></td>
+<td><input type="text"  SIZE=30 name="url" VALUE="http://"></td>
+</tr>
+
+<tr valign=top>
+<td><b>Email Address:</b></b></td>
+<td><input type="text" SIZE=30 name="email"></td>
+</tr>
+
+</table>
+
+<!--- The engines variable allows you to select which engines --->
+<!--- to use.  If no engines are selected, or there is no --->
+<!--- engines variable on the page, then the default selection --->
+<!--- will be used.  (The default selection is defined in the --->
+<!--- DAT file) --->
+
+<p>
+<table width=100% cellpadding=1 cellspacing=1 border=1>
+<tr valign=top bgcolor="#FF8000">
+<td><b><font color="#FFFFFF">Default Engines</font></b></td>
+<td><b><font color="#FFFFFF">Additional Engines</font></b></td>
+</tr>
+<tr valign=top>
+<td>
+<input type="Checkbox" name="engines" value="altavista" checked><a href="http://altavista.digital.com/">altavista</a><br>
+<input type="Checkbox" name="engines" value="aol" checked><a href="http://netfind.aol.com/">aol</a><br>
+<input type="Checkbox" name="engines" value="excite" checked><a href="http://www.excite.com/">excite</a><br>
+<input type="Checkbox" name="engines" value="hotbot" checked><a href="http://www.hotbot.com/">hotbot</a><br>
+<input type="Checkbox" name="engines" value="infoseek" checked><a href="http://www.infoseek.com/">infoseek</a><br>
+<input type="Checkbox" name="engines" value="nlsearch" checked><a href="http://www.nlsearch.com/">nlsearch</a><br>
+<input type="Checkbox" name="engines" value="planetsearch" checked><a href="http://www.planetsearch.com/">planetsearch</a><br>
+<input type="Checkbox" name="engines" value="webcrawler" checked><a href="http://www.webcrawler.com/">webcrawler</a><br>
+<input type="Checkbox" name="engines" value="whatyouseek" checked><a href="http://www.whatyouseek.com/">whatyouseek</a><br>
+</td>
+<td>
+<input type="Checkbox" name="engines" value="google"><a href="http://www.google.com/">google</a><br>
+<input type="Checkbox" name="engines" value="infomak"><a href="http://www.infomak.com/">infomak</a><br>
+<input type="Checkbox" name="engines" value="intersearch-de"><a href="http://www.intersearch.de/">intersearch</a> (.de)<br>
+<input type="Checkbox" name="engines" value="intersearch-au"><a href="http://austria.intersearch.net/">intersearch</a> (.au)<br>
+<input type="Checkbox" name="engines" value="altavista-au"><a href="http://www.altavista.yellowpages.com.au/">altavista</a> (.au)<br>
+<input type="Checkbox" name="engines" value="webwombat"><a href="http://www.webwombat.com/">webwombat</a> (.au .nz)<br>
+<input type="Checkbox" name="engines" value="anzwers"><a href="http://www.anzwers.com/">anzwers</a> (.au .nz)<br>
+<input type="Checkbox" name="engines" value="voila"><a href="http://www.voila.com/">voila</a> (.fr)<br>
+<input type="Checkbox" name="engines" value="euroferret"><a href="http://www.euroferret.com/">euroferret</a><br>
+</td>
+</tr>
+</table>
+
+<p>
+
+<!--- The hidden action variable controls whether there will be a --->
+<!--- confirmation page.  The two values are submit and confirm --->
+
+<input type="hidden" name="action" value="confirm">
+
+<!--- The hidden thankyou variable controls whether there will be a --->
+<!--- Thank You message.  Allowed values are yes or blank (null) --->
+
+<input type="hidden" name="thankyou" value="Yes">
+
+<!--- The engines variable allows you to select which engines --->
+<!--- to use.  If no engines are selected, or there is no --->
+<!--- engines variable on the page, then the default selection --->
+<!--- will be used.  (The default selection is defined in the --->
+<!--- DAT file) Notice that on this example, there is no engines --->
+<!--- variable, which means the default will always be used. --->
+
+<input type="submit" value="Submit Your Site!">
+
+</form>
+
+<p><hr noshade><p>
+
+<!--- ******************************* --->
+<!--- ***** BEGIN SAMPLE FORM 3 ***** --->
+<!--- ******************************* --->
+
+<b><font size="3">SimpleSubmit! Sample Form 3</font></b>
+
+<p>
+This sample form contains the fields needed so that there will
+<i>never</i> be a confirmation page, the visitor does not have
+the option of seeing the confirmation page.  An email Thank You
+message will <I>never</I> be sent either.
+<p>
+Also, in this example, there are no choices for which engines to 
+select.  This means that the default engines will be used
+every time.  (The default engines can be modified in the DAT file)
+
+<p>
+
+<!--- Begining of the form.  Be sure to change the action value --->
+<!--- to point to submit.cgi on your server. --->
+
+<form action="/cgi-bin/submit.cgi" method=POST>
+
+<table cellspacing=1 cellpadding=1 border=1>
+
+<tr valign=top>
+<td><b>Website URL:</b></td>
+<td><input type="text"  SIZE=30 name="url" VALUE="http://"></td>
+</tr>
+
+<tr valign=top>
+<td><b>Email Address:</b></b></td>
+<td><input type="text" SIZE=30 name="email"></td>
+</tr>
+
+</table>
+
+<p>
+
+<!--- The hidden action variable controls whether there will be a --->
+<!--- confirmation page.  The two values are submit and confirm --->
+
+<input type="hidden" name="action" value="submit">
+
+<!--- The hidden thankyou variable controls whether there will be a --->
+<!--- Thank You message.  Allowed values are yes or blank (null) --->
+
+<input type="hidden" name="thankyou" value="">
+
+<!--- The engines variable allows you to select which engines --->
+<!--- to use.  If no engines are selected, or there is no --->
+<!--- engines variable on the page, then the default selection --->
+<!--- will be used.  (The default selection is defined in the --->
+<!--- DAT file) Notice that on this example, there is no engines --->
+<!--- variable, which means the default will always be used. --->
+
+<input type="submit" value="Submit Your Site!">
+
+</form>
+
+<p><hr noshade><p>
+
+<!--- ******************************* --->
+<!--- ***** BEGIN SAMPLE FORM 4 ***** --->
+<!--- ******************************* --->
+
+<b><font size="3">SimpleSubmit! Sample Form 4</font></b>
+
+<p>
+This sample form contains the fields needed so that there will
+<i>always</i> but an email Thank You message will
+<I>never</I> be sent.
+<p>
+Also, in this example, there are no choices for which engines to 
+select.  This means that the default engines will be used
+every time.  (The default engines can be modified in the DAT file)
+
+<p>
+
+<!--- Begining of the form.  Be sure to change the action value --->
+<!--- to point to submit.cgi on your server. --->
+
+<form action="/cgi-bin/submit.cgi" method=POST>
+
+<table cellspacing=1 cellpadding=1 border=1>
+
+<tr valign=top>
+<td><b>Website URL:</b></td>
+<td><input type="text"  SIZE=30 name="url" VALUE="http://"></td>
+</tr>
+
+<tr valign=top>
+<td><b>Email Address:</b></b></td>
+<td><input type="text" SIZE=30 name="email"></td>
+</tr>
+
+</table>
+
+<p>
+
+<!--- The hidden action variable controls whether there will be a --->
+<!--- confirmation page.  The two values are submit and confirm --->
+
+<input type="hidden" name="action" value="confirm">
+
+<!--- The hidden thankyou variable controls whether there will be a --->
+<!--- Thank You message.  Allowed values are yes or blank (null) --->
+
+<input type="hidden" name="thankyou" value="">
+
+<!--- The engines variable allows you to select which engines --->
+<!--- to use.  If no engines are selected, or there is no --->
+<!--- engines variable on the page, then the default selection --->
+<!--- will be used.  (The default selection is defined in the --->
+<!--- DAT file) Notice that on this example, there is no engines --->
+<!--- variable, which means the default will always be used. --->
+
+<input type="submit" value="Submit Your Site!">
+
+</form>
+
+<p><hr noshade><p>
+
+<A NAME="frames"></A>
+<b><font size="5" color="#FF8000">Customize the Frames</font></b>
+<p>
+There are three frames that may show up in addition to the
+search engine frames.  They are the <b>bannerframe</b>, <b>oddframe</b> and
+the <b>errorframe</b>.
+<p>
+The URL of these frames is set in the DAT file.  If you prefer, you can change these frames
+to a web page that you design by simply modifying the URL.
+<p>
+<b>bannerframe</b> appears every time someone uses your submit script.
+By default, this points to a script on VerySimple server which
+reads input from the script and creates a "back" button based
+on the referring url.
+<p>
+<b>oddframe</b> is a frame that appears when there are an odd number
+of frames.  By default, it is an ad for scripts on VerySimple.
+<p>
+<b>errorframe</b> is a frame that appears when the engine selected in
+the form is not defined in the DAT file.  This happens if you
+make a spelling error on the form, or you upgrade your form
+to include additional engines, but forget to update the DAT
+file.  It is not really recommended to change this URL, instead
+just fix your form!
+
+<p>
+<A NAME="thankyou"></A>
+<b><font size="5" color="#FF8000">Customize the Thank You Message</font></b>
+<p>
+Customizing the Thank You message that is sent to you visitors
+is very simple.  The file <B>submit.tha</B> is simply a text
+file that can be edited using any text editor.  The only thing
+to be aware of is that the first three lines of the file must
+remain consistent, otherwise the email message may not have
+the correct From: and Subject: field.  The format of the file
+should be like so:
+<p>
+<FONT SIZE="3"><pre>
+From: <I>your@address.here</I>
+Subject: <I>your subject line</I>
+
+Begin the message here.  (notice one blank
+line after subject) message continues...  The
+lines will appear in the message exacly as they
+do in this file.  Typically, you don't want more
+than 72 characters on one line.
+
+</pre></FONT>
+
+
+
+<p>
+<A NAME="engines"></A>
+<b><font size="5" color="#FF8000">Adding Engines</font></b>
+
+<p>
+You can be a part of the development of this script!
+
+<p>
+Search engines can be added and/or modified by editing the 
+DAT file that is included with the script.  This requires very
+little understanding of Perl, but you will have to edit a couple
+of lines of the DAT file.  It is not necessary to do
+this to get the full benefit of SimpleSubmit, but it does
+allow you to customize the script for use with Free-For-All
+links pages, awards pages and Search Engines that require more
+than just URL and Email.
+
+<p>
+As search engines
+change, updated DAT files will be distributed from 
+<A HREF="http://www.verysimple.com/scripts/">http://www.verysimple.com/scripts/</A>.
+If you discover a new search engine, or find that an old one has
+changed, please feel free to make the changes to the DAT file
+and send them to VerySimple.  We will likely include them in a
+future DAT file.
+
+<p>
+Note for Perl programmers: the DAT file is loaded into the 
+script as a library file.  You'll see that the DAT file is actually
+one subroutine which is called from the main program.
+
+<p>
+The way the DAT file works is that it assigns a URL to an associative array.
+Each array "value" has a unique name -or- "key".  If you look a the
+'engines' variable options on Sample Form 1, you'll notice that these match the array keys
+in the DAT file.  To add a new engine, you simply add another
+unique array key, edit the URL, and then add a new checkbox to your form.
+Looking at each array, you should be able to see where the 
+variables go.  You will, of course, have to inspect the original
+submission page to see what the variables are called and so forth.
+
+<p>
+If you look at the DAT file, the very last engine that is listed
+as an example, the line begins: $url{'vs-demo'} =
+
+<p>
+This is an example of a Free-for-All links page that requires a
+title field, URL and a section field.  To add support for this page, 
+we just need to add a new checkbox, and add the new fields
+to our form.  Also, most FFA pages require that the method is "post" instead of
+"get"  So, you need to add one line of code to the DAT file as well indicating that
+this should be submitted via post.  See the file <i>submit.dat</i> that came with the script
+for an example.  This form below allows you to submit
+to a <A HREF="http://www.verysimple.com/submit/links.html">VerySimple Free-For-All links Demo Page</A>.
+SimpleSubmit will support as many variables as you'd like.
+The official SimpleSubmit page only has URL and Email to keep it
+fast and simple, but the actual script is not limited in this way:
+
+<p>
+<form action="/cgi-bin/submit.cgi" method="post">
+<input type="hidden" name="action" value="confirm">
+
+<table>
+<tr><td>Title:</td><td><input type="text" name="title" value=""></td></tr>
+<tr><td>URL:</td><td><input type="text" name="url" value="http://"></td></tr>
+<tr><td>Email:</td><td> <input type="text" name="email" value=""></td></tr>
+<tr><td>Section:</td><td><select name="section"><option value="Business"> Business<option value="Computers"> Computers<option value="Education"> Education<option value="Entertainment"> Entertainment<option value="Government"> Government<option value="Personal"> Personal<option selected value="Miscellaneous"> Miscellaneous</select></td></tr>
+<tr><td colspan=2>
+
+<!-- Here's a regular engine --->
+<input type="Checkbox" name="engines" value="altavista" checked>Submit to <A HREF="http://altavista.digital.com">altavista</A><br>
+
+<!-- Here's the additional engine defined in the DAT file --->
+<input type="Checkbox" name="engines" value="vs-demo" checked>Submit to <A HREF="http://www.verysimple.com/submit/links.html">VerySimple Links Demo</A><br>
+
+<p>
+<INPUT TYPE="Submit" VALUE="Submit">
+</td></tr>
+</table>
+
+</form>
+
+<p><hr noshade><p>
+SimpleSubmit! &copy; 1998, Jason M. Hinkle<br>
+<A HREF="http://www.verysimple.com/scripts/">http://www.verysimple.com/scripts/</A>
+
+</FONT>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</td>
+
+</tr>
+</table>
+</BODY>
+</HTML>
