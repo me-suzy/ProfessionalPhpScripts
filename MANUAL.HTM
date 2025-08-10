@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="STAR ENTERPRISE - www.starenterprise.com">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (Win16; I) [Netscape]">
+   <TITLE>SunnyScript - YourShop IDTracker</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#FCA503" ALINK="#FEE401" BACKGROUND="back.gif">
+&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="750" >
+<TR>
+<TD>
+<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=3 COLS=1 WIDTH="100%" BGCOLOR="#FFD959" >
+<TR>
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=+1>Electronic Manual - YourShop
+IDTracker</FONT></FONT>
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>&copy; SunnyScript</FONT></FONT></TD>
+</TR>
+</TABLE>
+
+<BR>&nbsp;
+<P><B><FONT FACE="Arial,Helvetica">Table of contents</FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1><A HREF="#1">Install the
+software on your server</A> | <A HREF="#2">How it works (script.cgi)</A>
+| <A HREF="#3">Advanced feature (returnid.cgi &amp; returnid.htm)</A> |
+<A HREF="#4">Customer
+support</A></FONT></FONT>
+<BR>&nbsp;
+<P><A NAME="1"></A>
+<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=3 COLS=1 WIDTH="100%" >
+<TR BGCOLOR="#E8E8E8">
+<TD><B><FONT FACE="Arial,Helvetica">Install the software on your server</FONT></B>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Software configuration...</FONT></FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Open script.cgi and returnid.cgi
+in a text editor and follow the configuration instructions included within
+the files. While script.cgi is required in any case, returnid.cgi is an
+optional tool (read below and decide yourself if you need it).</FONT></FONT>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Transfer files to server...</FONT></FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Start a ftp or telnet session
+(telnet should be preferred). Then go to the /cgi-bin directory of your
+server (or use a place where you can execute cgi). Copy the following files
+in this directory:</FONT></FONT>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=3 WIDTH="100%" >
+<TR>
+<TD WIDTH="10%">&nbsp;</TD>
+
+<TD WIDTH="20%"><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>script.cgi</FONT></FONT></TD>
+
+<TD WIDTH="70%"><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>--> Main program
+(rename it if you wish)</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;</TD>
+
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>returnid.cgi</FONT></FONT></TD>
+
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>--> Set cookie for use with
+an other domain (optional)</FONT></FONT></TD>
+</TR>
+</TABLE>
+
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Now you must set the file
+permissions to 755 (executable). On telnet, just type in the following
+at the command prompt:</FONT></FONT>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=2 WIDTH="100%" >
+<TR>
+<TD WIDTH="10%">&nbsp;</TD>
+
+<TD WIDTH="90%"><TT>chmod 755 script.cgi [Press Enter]</TT></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;</TD>
+
+<TD><TT>chmod 755 returnid.cgi [Press Enter]</TT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(optional)</FONT></FONT></TD>
+</TR>
+</TABLE>
+
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>You're ready !</FONT></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="2"></A>
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=3 COLS=1 WIDTH="100%" >
+<TR BGCOLOR="#E8E8E8">
+<TD><B><FONT FACE="Arial,Helvetica">How it works</FONT></B>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>The affiliate id and URL...</FONT></FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>By calling the script, a
+cookie containing the affiliate id will be set and the user will be redirected
+to the specified URL. Now the cookie (affiliate id) can be read out at
+any time using a form (e.g. your order forms). Please read the following
+instructions:</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>1. You must create a unique
+identification for each affiliate. It doesn't matter how long it is and
+can contain letters as well as numbers (be careful with special characters
+and avoid spaces). We suggest a small database like an address book to
+manage all affiliate information (name and address, e-mail, id, payment
+contact, ...).</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>2. When this work is done,
+you can create the URL that links from the associate's website to yours.
+It may look similar like this one (replace AffiliateID with the identifications
+of your affiliates):</FONT></FONT>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=2 WIDTH="100%" >
+<TR>
+<TD WIDTH="10%">&nbsp;</TD>
+
+<TD WIDTH="90%"><TT>http://www.sunnyscript.com/cgi-bin/script.cgi?id=AffiliateID</TT></TD>
+</TR>
+</TABLE>
+
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>The associate adds this URL
+to his / her website. If a visitor clicks on it, our software will set
+a cookie called "AFFILIATE" and brings the visitor directly to your website.</FONT></FONT>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Read out the affiliate
+identification (cookie) using forms...</FONT></FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>As explained, a cookie called
+"AFFILIATE" containing the affiliate id as value will be set on visitor's
+computer. It can be read out later (e.g. in your order forms) by using
+the JavaScripts located in the file js.txt delivered with the package.</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Add the <B>first part in
+the head</B> of the concerned webpage (before tag &lt;/head>) and add the
+<B>second
+part inside the form</B> (after the initializing &lt;form> tag).</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>These two scripts generates
+a hidden field called "AFFILIATE_ID" containing the cookie as value, which
+will be processed together with all other form fields. In this way you
+can determine the affiliate that is associated with the order / form submission.</FONT></FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="100%" >
+<TR>
+<TD>
+<CENTER><FONT FACE="Arial,Helvetica"><FONT SIZE=-1><B>Congratulations</B>
+- you have finished installation and configuration of the YourShop IDTracker
+!</FONT></FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+</TD>
+</TR>
+</TABLE>
+<A NAME="3"></A>
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=3 COLS=1 WIDTH="100%" >
+<TR BGCOLOR="#E8E8E8">
+<TD><B><FONT FACE="Arial,Helvetica">Advanced feature (returnid.cgi &amp;
+returnid.htm)</FONT></B>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Set cookie with one domain
+and read it from an other...</FONT></FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Due to security restrictions,
+cookies can be read out only by the same domain name that originally sets
+it. If you want to read the cookie from a different domain (e.g. secure
+order forms) but use your domain name for the affiliate URLs, you must
+configure returnid.cgi and returnid.htm:</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>1. Install script.cgi on
+the server where the cookie should be read out (e.g. secure server) and
+returnid.cgi on your main server (in our example sunnyscript.com). Copy
+returnid.htm to the web-directory of the main server (where returnid.cgi
+is located).</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>2. Open script.cgi and returnid.cgi
+in a text editor and follow the configuration instructions included within
+the files.</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>3.Open returnid.htm in a
+text editor and change the line &lt;!--#exec cgi="/cgi-bin/returnid.cgi"-->
+that it reflects the correct path to returnid.cgi. The refresh tag in the
+head must contain the URL where visitors are redirected after the cookie
+is set. Due to optical reasons the variable "homepage" in script.cgi should
+contain the same URL (but will be ignored completely in this case).</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>4. The URLs for your affiliates
+looks like</FONT></FONT>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=2 WIDTH="100%" >
+<TR>
+<TD WIDTH="10%">&nbsp;</TD>
+
+<TD WIDTH="90%"><TT>http://www.sunnyscript.com/returnid.htm?id=AffiliateID</TT></TD>
+</TR>
+</TABLE>
+
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1><I>Important note:</I> This
+method requires SSI (server side includes) enabled on the server (ask your
+provider for more information). It may be necessary to rename returnid.htm
+to returnid.shtml or similar, depending on the way your server handles
+SSI.</FONT></FONT>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>How does returnid.cgi
+and returnid.htm work ?</FONT></FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Technically, returnid.htm
+sends the affiliate's identification to returnid.cgi. Now a cookie is set
+using the domain where script.cgi is installed (of course, you must tell
+returnid.cgi about this domain - look to the installation part inside the
+script).</FONT></FONT>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>In case of errors with
+SSL or SSI: Try the alternative solution...</FONT></FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>For example some SSL servers
+does not allow access without encryption (http://... instead of https://...)
+and other systems may not be able to handle SSI calls. But the YourShop
+IDTracker will also run on such systems:</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Install script.cgi on the
+server (URL) you want to read out the affiliate id (e.g. secure server).
+Change the configuration variable $homepage (located in script.cgi) that
+it points to a webpage on this server containing a redirection to your
+normal website.</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>In this way you can read
+out the affiliate id from the other server (URL) later without using returnid.cgi
+&amp; returnid.htm.</FONT></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="4"></A>
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=3 COLS=1 WIDTH="100%" >
+<TR BGCOLOR="#E8E8E8">
+<TD><B><FONT FACE="Arial,Helvetica">Customer support</FONT></B>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>The YourShop IDTracker comes
+with <B>unlimited installation support</B> and <B>free 60-days-support</B>.</FONT></FONT>
+<P><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>If you have a question, please
+read this manual first. Perhaps you find the answer here. But if you still
+experience problems, we will more than happy to help you. Please contact
+our customer support via e-mail (<A HREF="mailto:support@sunnyscript.com">support@sunnyscript.com</A>).</FONT></FONT>
+<P><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Now we wish you a great
+time with the YourShop IDTracker :-)</FONT></FONT></B></TD>
+</TR>
+</TABLE>
+
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=3 COLS=1 WIDTH="100%" >
+<TR BGCOLOR="#E8E8E8">
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>&copy; SunnyScript - A subsidiary
+of <A HREF="http://www.starenterprise.com">Star Enterprise</A>.</FONT></FONT>
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Please read the legal agreements
+located at... <A HREF="http://www.sunnyscript.com/terms.htm">http://www.sunnyscript.com/terms.htm</A></FONT></FONT></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>
