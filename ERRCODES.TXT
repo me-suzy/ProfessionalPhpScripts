@@ -1,0 +1,185 @@
+THIS FILE CONTAINS LIST OF ERROR CODES FOR CGIMailer v1.20.
+
+0	- Reserved
+
+1	- CONTENT_LENGTH variable is not passed.
+	When HTTP server executes an CGI program it is supposed to
+	pass CONTENT_LENGTH environment variable to program.
+	This error may occur due to server error.
+	On this error CGIMailer always responses with internal error
+	message.
+
+2	- Error reading STDIN.
+	This error is generated if CGIMailer can't read number of
+	bytes specified in CONTENT_LENGTH variable.
+	On this error CGIMailer always responses with internal error
+	message.
+
+3	- Not enough memory.
+	This error occurs if CGIMailer fails to allocate memory
+	required to operate properly.
+
+4	- Name of configuration file is not passed.
+	CGIMailer expects name of configuration file to be passed as
+	command line parameter or in SYS.CONFIGFILE variable.
+	If this is not case it generates error with this code.
+	If this error occurs check calling HTML code to see if the
+	name of configuration file is correctly passed, also be sure
+	to use POST method for calling CGIMailer.
+	On this error CGIMailer always responses with internal error
+	message.
+
+5	- Syntax error in configuration file.
+	This error is generated when CGIMailer finds unexpected line
+	in configuration file.
+	Also check if all variable names in configuration file are
+	written correctly.
+
+
+6	- Reserved
+
+7	- Error reading configuration file.
+
+8	- Error reading response template.
+	This error is generated when response template is successfully
+	opened but CGIMailer can't read complete file.
+
+9	- Error reading error template.
+	This error is generated when error template is successfully
+	opened but CGIMailer can't read complete file.
+	On this error CGIMailer always responses with internal error
+	message.
+
+10	- Error reading message template.
+	This error is generated when message template is successfully
+	opened but CGIMailer can't read complete file.
+
+11	- Internal error
+
+12	- Error opening response template.
+	This error is generated when CGIMailer fails to open response
+	template.
+	If this error occurs check if TEMPLATE variable points to an
+	existing file, also check access permissions for that file.
+	All variables pointing to files are expected to contain path
+	relative to cgimail.exe or an absolute path.
+
+13	- Error opening message template.
+	This error is generated when CGIMailer fails to open input
+	template.
+	If this error occurs check if MSGTEMPLATE variable points
+	to an existing file, also check access permissions for
+	that file.
+	All variables pointing to files are expected to contain path
+	relative to cgimail.exe or an absolute path.
+
+14	- Error opening error template.
+	This error is generated when CGIMailer fails to open error
+	template.
+	If this error occurs check if ERRTEMPLATE variable points to
+	an existing file, also check access permissions for that file.
+	All variables pointing to files are expected to contain path
+	relative to cgimail.exe or an absolute path.
+
+15	- Error opening configuration file.
+	This error is generated when CGIMailer fails to open
+	configuration file.
+	If this error occurs check if name of configuration file passed to
+	CGIMaier points to an existing file.
+	All variables pointing to files are expected to contain path
+	relative to cgimail.exe or an absolute path.
+	On this error CGIMailer always responses with internal error
+	message.
+
+16	- Reserved
+
+17	- Reserved
+
+18	- Reserved
+
+19	- Failed to sent mail.
+	This error is generated when CGIMailer can't send mail for an
+	unknown reason.
+
+20	- Reserved
+
+21	- Reserved
+
+22	- Sender not acceptable.
+	SMTP does not accepts address stated in FROM variable as valid.
+
+23	- Recipient not acceptable.
+	SMTP server refuses one(or more) address(es) listed in TO, CC or BCC.
+
+24	- Required variable is not set.
+	This error will be generated if CGIMailer finds required
+	variable with value which is not set.
+
+25	- Reserved
+
+26	- Reserved
+
+27	- Reserved
+
+28	- Reserved
+
+29	- TEMPLATE variable is not set.
+	CGIMailer generates this error when TEMPLATE variable in
+	configuration file can not be found.
+
+30	- Reserved
+
+31	- TO variable is not set.
+	CGIMailer generates tihs error when TO variable in
+	configuration file can not be found.
+
+32	- Reserved
+
+33	- Reserved
+
+34	- Reserved
+
+35	- Reserved
+
+36	- Connection timed out.
+	There was no response from server whithin TIMEOUT seconds.
+	See TIMEOUT variable in configuration file.
+
+37	- Connection reset by SMTP server.
+
+38	- Invalid TIMEOUT value.
+
+39	- Failed to initialise Windows socket subsystem.
+
+40	- Network is down.
+
+41	- Host is unreachable.
+	This means that CGIMailer cant't reach SMTP server specified
+	in GATEWAY variable in configuration file.
+
+42	- Connection is refused.
+	SMTP server specified in GATEWAY variable in configuration
+	file refuses conections on specified port (PORT variable).
+
+43	- Network is unreachable.
+
+44	- SMTP server can not be found.
+	CGIMailer can not find SMTP server's IP address.
+
+45	- SMTP connection failed.
+	CGIMailer generates this error when is connected to
+	server but SMTP conversation failes.
+
+46	- Unknown network error.
+	An network error occured while sending mail.
+
+47	- Reserved
+
+48	- Reserved
+
+49	- Reserved
+
+50	- Failed to open output file.
+	CGIMailer failed to open file for writing specified by
+	SAVETOFILE variable in configuration file. This is probablly
+	because of WRITE access is not allowed for specified file.
