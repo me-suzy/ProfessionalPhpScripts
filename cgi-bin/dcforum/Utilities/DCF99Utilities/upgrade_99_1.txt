@@ -1,0 +1,101 @@
+UPGRADING TO DCFORUM99 Ver. 1.1 FROM DCFORUM99 Ver. 1.000, 1.001, and 1.002
+=================================================================
+
+DURING THE UPGRADE, YOU MAY WANT TO ALERT YOUR USERS.
+YOU SHOULD TAKE dcboard.cgi OFF LINE WHILE YOUR UPGRADING.
+
+BEFORE YOU BEGIN...
+1) Backup all *.txt file in your User_info directory
+2) Backup all your script files in your dcforum cgi-bin directory
+3) Backup your database.txt in your forum directories
+
+What's new in Ver 1.1?
+--------------------------------------------------------
+Added Features:
+1) Conference - Grouping of Forums.  You have the option to
+   only display conferences in the LOBBY or every forum
+   grouped in each conference.
+2) Printer Friendly Format - Allows the displaying of printer friendly page
+3) Optional fully threaded main listing - for that classic BBS look
+4) Topic Autosensing - If the number of messages in a given topic
+   reaches a maximum number set by the administrator, the script
+   kicks into single message mode wherein the user can read one message
+   at a time.  There is also 'Display All' mode so that users can still
+   display entire topic
+5) Option to use classic text threading in the table of contents
+6) Added text navigation menu to the top of lobby and main listing
+
+Upgrading from DCForum99 Ver. 1.000 and 1.001
+-----------------------------------------------
+In order to upgrade to 1.1, you must first update
+your database.txt to be 1.002 compatible.  To do this, you simply run
+conv_database.cgi (in Utilities folder).  Here's what the script does:
+
+- Replaces "\0" with "|" - caption
+  gets its own field in database.txt
+  -  Those who are currently using Release 1.000 or 1.001 must
+     use this conversion script before installing later patch.
+
+To run conv_database.cgi:
+1) If not done yest, backup all database.txt (just in case)
+2) Edit first line of conv_database.cgi to properly
+   define the location of perl 5 on your server.
+3) Edit $path - should be same as your other scripts
+4) Upload conv_database.cgi to your dcforum cgi-bin.  This is
+   where all your dcforum scripts are.
+5) Chmod conv_database.cgi to 755
+6) Run conv_database.cgi from your browser.  The URL would be
+   http://www.yourdomain.com/cgi-bin/dcforum_path/conv_database.cgi
+
+At this point, your database.txt IS Ver 1.002 compatible.
+Next, go on to 'Upgrading from DCForum99 Ver 1.002'
+
+
+Upgrading to DCForum99 Ver. 1.002
+-----------------------------------------------
+In order to include conference feature, forum information in forum_info.txt
+had to include additional field.  To add this, you must run conv_forum_info.cgi
+before you upload rest of the new files.
+
+1) If not done yet, backup *.txt files in your User_info directory.
+2) Delete board_setup_file.txt in your User_info_directory
+3) Edit your dcforum.setup file (not the new copy but the one on your server)
+4) At the very bottom of dcforum.setup, add:
+
+   $conf_file = "conf_info.txt";
+
+   This is where the conference information will be stored.
+5) Upload dcforum.setup to your server.
+6) Edit first line of conv_forum_info.cgi to properly
+   define the location of perl 5 on your server.
+7) Edit $path - should be same as your other scripts
+8) Upload conv_forum_info.cgi to your dcforum cgi-bin.  This is
+   where all your dcforum scripts are.
+9) Chmod conv_database.cgi to 755
+10) Run conv_forum_info.cgi from your browser.  The URL would be
+   http://www.yourdomain.com/cgi-bin/dcforum_path/conv_forum_info.cgi
+11) Edit *.cgi files from Ver1.1.  Namely, the first line (#!/usr/bin/perl) and
+    the $path statement.  If you're not sure, take a look at your older scripts.
+12) Upload the following files to your server and chmod properly:
+
+dcadmin.cgi (755)
+dcboard.cgi (755)
+dcextra.cgi (755)
+dclogin.cgi (755)
+dcpost.cgi (755)
+dcuser.cgi (755)
+help.cgi (755)
+dcforumlib.pl
+dcforumlib2.pl
+global.pl
+dcprotect.pl
+dclib.pl
+
+DO NOT UPLOAD dcboard.setup, dcforum.htmlt and dcadmin.setup since you already customized it.
+
+13) Start DCAdmin and choose 'Create Conference' and create some conferences.
+14) For each forums, select Modify Forums and assign conferences.
+
+-----------------------------------------------------
+
+That's should do the trick!  If you have problems, contact support@dcscripts.com
