@@ -1,0 +1,192 @@
+UPGRADING TO DCFORUM99 FROM DCFORUM98
+=================================================================
+
+In addition to all the new features in DCF99, the main upgrade
+is in the way threads are stored.  Originally, the threads in
+public and protected forums were simply HTML files.  With DCF99,
+we decided to store each thread as a text-delimited database.
+Instead of dynamically generating each thread, however, an HTML thread
+would be created each time this text file is modified.  So, while
+the navigation experience is the same, the forum data is portable.
+
+In doing so, you must convert all your HTML threads to these data files,
+and then recreate those threads by running UPDATE THREADS from your
+DCAdmin.  The script that will help you migrate is conv_98_99.cgi
+
+NOTE: THIS CONVERSION WILL ONLY WORK IF YOU DID NOT MODIFY OR CUSTOMIZE
+THE THREAD LAYOUT-THAT IS, YOU DIDN'T MODIFY ANY PORTIONS OF
+create_message, thread_message, and html_main_body.
+THIS DOES NOT INCLUDE CUSTOMIZATION YOU MAY HAVE MADE TO dcforum.htmlt.
+IF YOU DID MODIFY ANY ONE OF THE ABOVE FUNCTIONS OR YOU'RE NOT SURE,
+PLEASE CONTACT dc@dcscripts.com with subject heading "98 to 99 Help".
+
+
+PLEASE FOLLOW THE INSTRUCTION AS STATED.  DO NOT SKIP A STEP
+
+I. BACKING UP EXISTING FILES
+=================================================================
+
+1) Download DCForum98 files from your /cgi-bin/dcforum directory
+   to your PC and save it as backup.
+
+2) Download Forum Info files from your /cgi-bin/dcforum/User_info
+	directory to your PC and save it as backup.  You only need to
+   download *.txt files.  *.log and *.session is not needed.
+
+3) Delete *.session files
+
+4) Delete board_setup_file.txt and auth_setup_file.txt from
+   /cgi-bin/dcforum/User_info directory
+
+5) Let your site users be aware that the forum will be down
+for an hour or so.  You may want to add:
+
+print "\n";
+print "<html><head></head><body>\n";
+print "<h1>Forum down for upgrade</h1>\n";
+print "</body></html>\n";
+
+after
+
+print "Content-type: text/html\n";
+
+in your dcboard.cgi file.
+
+6) Run dcadmin.cgi to remove lock files and temp files
+
+
+II.  CREATING THREAD DATABASE
+=================================================================
+0) Open new copy of dcforum.setup.  Look for:
+
+#----- New Parameters for DCForum99 Ver 1.000
+
+Cut everyline below this line and paste it into your current dcforum.setup.
+Upload dcforum.setup.
+
+1) Edit conv_98_99.cgi - Edit $path variable.  It should be
+   the same $path variable as defined in your older copy of dcboard.cgi
+   Also, if your setup file is not dcforum.setup, then make proper
+   change to the require statement in conv_98_99.cgi
+
+2) Upload dclib.pl, dcforumlib.pl, dcforumlib2.pl, and conv_98_99.cgi to the
+   cgi-bin directory where DCForum98 is currently installed.
+
+3) Chmod conv_98_99.cgi to 755.
+
+4) Run conv_98_99.cgi from your browser.  This program will read in from
+   html threads and convert it to text delimited database file.
+   When it completes executing, take a look the output of this program.
+   Output should look something like:
+
+------------------------------------------------------------------
+Processing /General
+
+Processing d:/scripts/dcscripts/dcforum98/dcfp/General/25.html
+0|0|DCscroll|Domenic|Asprella@REMOVE_THISworldnet.att.net|20:49:57|12/29/1998|I 
+1|1|Did you use Binary mode when...|David||21:28:21|12/29/1998|Class file must b
+2|1|DCscroll|Domenic|Asprella@REMOVE_THISworldnet.att.net|23:06:22|12/29/1998|Th
+
+Processing d:/scripts/dcscripts/dcforum98/dcfp/General/24.html
+0|0|ALWAYS BACKUP YOUR DATA ENTRY|DCScripts||11:58:09|12/19/1998|For those of yo
+
+Processing d:/scripts/dcscripts/dcforum98/dcfp/General/23.html
+0|0|Premature...|Sara|fatrat@REMOVE_THIScyberis.net|23:46:56|12/15/1998|I get th
+1|1|Hard to say what might be th...|David||06:33:15|12/16/1998|I get the follow
+
+Processing d:/scripts/dcscripts/dcforum98/dcfp/General/22.html
+0|0|DCGuest97 and DCLinks98 for Chinese|Sam Leung|cslcf@REMOVE_THIShotmail.com|2
+1|1|Change "&pip;" to &quo...||||//1900|We found out that BIG-5 unicod
+
+Processing d:/scripts/dcscripts/dcforum98/dcfp/General/21.html
+0|0|DCShop looks good!|Jaime Caro|jaime@REMOVE_THISinterfaz.com|23:17:11|12/07/1
+1|1|Actually, DCShop is not yet ...|David||23:52:42|12/07/1998|I took a short l
+
+Processing d:/scripts/dcscripts/dcforum98/dcfp/General/20.html
+0|0|DCScroll98|Bruce||17:03:35|11/21/1998|How do I get DCScroll98 to work? I put
+1|1|Check the readme file...|David||22:36:37|11/21/1998|How do I get DCScroll98
+
+Processing d:/scripts/dcscripts/dcforum98/dcfp/General/19.html
+0|0|Ron at igg.net|David||23:24:03|10/26/1998|I can't email you...it keeps comin
+1|1|Ron Email|King Richard|ranrinc@REMOVE_THIS2-cool.com|10:23:22|11/12/1998|Ok.
+2|2|Could you tell him that I tr...|David||00:01:25|11/13/1998|Ok. Ron Email is
+---------------------------------------------------------------------------------
+
+There should be a definite pattern in lines that follow "Processing..." text.
+For example:
+
+0|0|Ron at igg.net|David||23:24:03|10/26/1998|I can't email you...it keeps comin
+
+is just one record of a message.  It is "|" delimited and it refers to:
+
+message #|message level|subject|username|email|time|date|first few character of the message
+
+If your output doesn't look anything like this, or there is no pattern, then
+contact support@dcscripts.com.
+
+
+
+5) Install the BBS as instructed in install_unix.txt or install_nt.txt (obviousely
+whichever platform you are installing DCForum99).
+
+6) Start dcadmin.cgi
+
+7) Start Forum Attribute settings and make color/layout changes.
+   See admin.txt on font color settings.
+
+8) Run remove lock files and temp files
+
+9) Run Update Threads - BE SURE NOT TO RUN THIS MORE THAN ONCE.  AFTER
+   YOU UPDATE THREADS AND IF THERE IS AN ERROR, THEN PLEASE CONTACT US
+   IMMEDIATELY.
+
+If you have problems, contact support@dcscripts.com
+At this point, your data format is Ver 1.002 compatible.
+You now need to upgrade to Ver 1.1
+
+
+Upgrading to DCForum99 Ver. 1.002
+-----------------------------------------------
+In order to include conference feature, forum information in forum_info.txt
+had to include additional field.  To add this, you must run conv_forum_info.cgi
+before you upload rest of the new files.
+
+1) If not done yet, backup *.txt files in your User_info directory.
+2) Delete board_setup_file.txt in your User_info_directory
+3) Edit your dcforum.setup file (not the new copy but the one on your server)
+4) At the very bottom of dcforum.setup, add:
+
+   $conf_file = "conf_info.txt";
+
+   This is where the conference information will be stored.
+5) Upload dcforum.setup to your server.
+6) Edit first line of conv_forum_info.cgi to properly
+   define the location of perl 5 on your server.
+7) Edit $path - should be same as your other scripts
+8) Upload conv_forum_info.cgi to your dcforum cgi-bin.  This is
+   where all your dcforum scripts are.
+9) Chmod conv_database.cgi to 755
+10) Run conv_forum_info.cgi from your browser.  The URL would be
+   http://www.yourdomain.com/cgi-bin/dcforum_path/conv_forum_info.cgi
+11) Edit *.cgi files from Ver1.1.  Namely, the first line (#!/usr/bin/perl) and
+    and $path statement.  If you're not sure, take a look at your older scripts.
+12) Upload the following files to your server and chmod properly:
+
+dcadmin.cgi (755)
+dcboard.cgi (755)
+dcextra.cgi (755)
+dclogin.cgi (755)
+dcpost.cgi (755)
+dcuser.cgi (755)
+help.cgi (755)
+dcforumlib.pl
+dcforumlib2.pl
+global.pl
+dcprotect.pl
+dclib.pl
+
+DO NOT UPLOAD dcboard.setup, dcforum.htmlt and dcadmin.setup since you already customized it.
+
+13) Start DCAdmin and create conferences
+14) For each forums, select Modify Forums and assign conferences.
+
