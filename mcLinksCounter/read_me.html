@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>mcLinksCounter - Read Me</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="Expires" CONTENT="Fri, Jan 01 1900 00:00:00 GMT">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<style type="text/css">
+<!--
+a:actif {  font-family: Verdana; color: black; text-decoration: none}
+a:link {  font-family: Verdana; color: white; text-decoration: none}
+a:visited {  font-family: Verdana; color: white; text-decoration: none}
+a:hover {  font-family: Verdana; color: black; text-decoration: none}
+-&nbsp;
+</style>
+</head>
+<body bgcolor="#C0C0C0" text="black">
+<p align="right"><font face="verdana" size="5" color="black">mcLinksCounter 1.2</font></p><hr>
+
+<table align="center" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+ <td bgcolor="#333333" colspan="2"><font face="verdana" color="white" size="2">
+ Changelog</font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>1.0</b>: First release.<br>
+ <b>1.1</b>: Password protected admin panel. Detailed datas for each link.
+ Upgrade from 1.0 to 1.1: same method as new installation, but don't drop your table <b>mclinkscounter</b> (it is the same one) in order to not loose your datas.
+ <br>
+ <b>1.2</b>:Bugfix when deleting datas on first day of a month. Added displaying of "TOP 10".
+ Upgrade from 1.0 or 1.1: same method as previous line.
+ </font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#333333" colspan="2"><font face="verdana" color="white" size="2">
+ Installation</font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ Fichier <b>mclc.php</b>:<br>
+ Complete variables <b>$host $login $pass $base</b> with your data, <b>$langfile</b> with the language file name you want. Then choose a login and a password to <b>$admin_login</b> and <b>$admin_pass</b>.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ File <b>blank.php</b>:<br>
+ Language file you can use pour for translation. If you want to contribute, please send me your work by <a href="mailto:marc@phpforums.net">mail</a>. Thanks in advance.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ Upload the folder <b>mcLinksCounter</b> on your server. (you can change the name).<br>
+ You absolutely have to securise access to this folder. Use the method you prefer (htaccess, members only section ...)</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ Create the tables <b>mclinkscounter</b> and <b>mclinkscounter_detail</b>. (DO NOT change their names).<br>
+ Use the file <b>table.sql</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ Connect your browser to <b>mclinkscounter/stats.php</b>. (or newname/stats.php).<br>
+ You can now use the form to record your links.<br>
+ In order to have a link like <b>&lt;a href="http://www.site.com" target="_blank"&gt;Visit this&lt;/a&gt;</b> you have to write:<br>
+ &nbsp;&nbsp;Name: <b>Visit this</b><br>
+ &nbsp;&nbsp;Category: <b>Sites</b> (i.e)<br>
+ &nbsp;&nbsp;URL: <b>http://www.site.com</b><br>
+ &nbsp;&nbsp;Target: select <b>_blank</b><br>
+ &nbsp;&nbsp;Hits: <b>0</b> (or the number you want, if you don't want start from 0)<br>
+ Then press Submit and so on.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>Edit</b> or <b>Delete</b> a link:<br>
+ Not so hard, just click on <b>modify</b> or <b>delete</b> on its row, and follow instructions.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>Detailed Datas</b> for a link:<br>
+ Click on a link'name and go to some datas about it. Here are the today's and yesterday's number of hits, and some details about visitors of the day.<br>
+ Click on <b>Delete old datas</b> to ... delete old datas (older than one day) from the table, in order to not clutter up your database.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>And now :</b><br>
+ At the top of each page you wish have one or more links, write this little code:<br>
+ <b>&lt;? include "...path/mcLinksCounter/mclc.php"; ?&gt;</b> where "...path/... is the exact path from your page to <b>mclc.php</b>.
+ You can use mcLinksCounter on every page of your site, just remember to write this path at the top of each page.<br></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#333333"><font face="verdana" color="white" size="2">
+ In order to display:</font>
+ </td>
+ <td bgcolor="#333333"><font face="verdana" color="white" size="2">
+ Write this code:</font>
+ </td>
+ </tr>
+
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ One link with hidden counter:<br>
+  Have a look at <a href="#">my site</a>, every days!</font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ &nbsp;<br>Have a look at <b>&lt;? mclc_nom($PHP_SELF, "my site"); &gt;?</b> every days!</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ One link with visible counter:<br>
+  Download <a href="#">my script</a> (372)</font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ &nbsp;<br>Download <b>&lt;? mclc_nom_clics($PHP_SELF, "my script"); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ The all list in "Sites" category, with hidden counter,<br>order by name:<br><br>
+  My best sites :<br>
+  <a href="#">ABC Site</a><br>
+  <a href="#">Beautiful Site</a><br>
+  <a href="#">Just a Site</a><br>
+  <a href="#">My Site</a><br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ My best sites :&lt;br&gt;<b>&lt;? mclc_catN($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ The same list than above,<br>order by hits number:<br><br>
+  My best sites :<br>
+  <a href="#">Beautiful Site</a><br>
+  <a href="#">Just a Site</a><br>
+  <a href="#">ABC Site</a><br>
+  <a href="#">My Site</a><br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ My best sites :&lt;br&gt;<b>&lt;? mclc_catC($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ The all list in "Sites" category, with visible counter,<br>order by name:<br><br>
+  My best sites :<br>
+  <a href="#">ABC Site</a> (23)<br>
+  <a href="#">Beautiful Site</a> (57)<br>
+  <a href="#">Just a Site</a> (48)<br>
+  <a href="#">My Site</a> (19)<br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ My best sites :&lt;br&gt;<b>&lt;? mclc_catN_clics($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ The all list in "Sites" category, with visible counter,<br>order by hits number:<br><br>
+  My best sites :<br>
+  <a href="#">Beautiful Site</a> (57)<br>
+  <a href="#">Just a Site</a> (48)<br>
+  <a href="#">ABC Site</a> (23)<br>
+  <a href="#">My Site</a> (19)<br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ My best sites :&lt;br&gt;<b>&lt;? mclc_catC_clics($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ The top 3 (or 5, or 10, just ask) in "Sites" category, whith visible counter, order by hits number:<br><br>
+  The 3 most visited sites :<br>
+  <a href="#">Beau Site</a> (57)<br>
+  <a href="#">Joli Site</a> (48)<br>
+  <a href="#">Autre Site</a> (23)<br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ The 3 most visited sites :&lt;br&gt;<br><b>&lt;? mclc_catCtop_clics($PHP_SELF, "Sites",3); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr><td bgcolor="#666666" colspan="2">
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1">mcLinksCounter is
+        a free software; you can redistribute it and/or modify it under the terms of the <a href="GNU_GPL.html">GNU General Public License</a>
+        as published by the Free Software Foundation; either version 2 of the License, or any later version.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> mcLinksCounter is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software
+        Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA</font>
+      </p>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="white">copyright
+        &copy; 2002 - <a href="mailto:marc@phpforums.net">Marc Cagninacci</a> - <a href="http://www.phpforums.net">PhpForums</a></font> </p>
+    </td></tr>
+ </table>
+</body>
+</html>
