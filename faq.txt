@@ -1,0 +1,19 @@
+Advanced Poll v2.02
+-------------------
+
+FAQ:
+
+- After voting I get the following error:
+  Warning: Cannot add header information - headers already sent by 
+  (output started at ...) in ..poll_cookie.php on line ...
+
+Make sure that the page your poll is embedded in has the
+<?php require "poll_cookie.php"; ?>
+tag before anything else.
+
+
+- How can I display the result of the last poll?
+
+require "./booth.php";
+echo $php_poll->view_poll_result(x);      // x = Poll ID of your last poll
+
