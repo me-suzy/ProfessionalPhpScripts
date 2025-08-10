@@ -1,0 +1,31 @@
+<html><head><Title>Sign My Guestbook</Title></head>
+<BODY>
+<Hr>
+<h1><Center>Sign My Guestbook</h1></center>
+<hr>
+<P>Please fill in the blanks below:</P>
+<FORM method=POST action="http://your_cgi-bin/guest.cgi">
+<P>Your Name: <INPUT TYPE="text" NAME="name" SIZE="30"><br></P>
+<P>E-Mail: <INPUT TYPE="text" NAME="email" SIZE="40"><br></P>
+<P>City: <INPUT TYPE="text" NAME="city" SIZE="15">, State: <INPUT TYPE="text" NAME="state" SIZE="2"> Country:<INPUT TYPE="text" NAME="country" VALUE="USA" SIZE="15"><br></P>
+<P>
+
+<!--ONLY CHANGE THIS SECTION!!-->
+<SELECT NAME="howfound">
+<OPTION VALUE="">How'd You Find Me?
+<OPTION>Blind Luck I Guess
+<OPTION>Link
+<OPTION>A Search Engine
+<OPTION>Word of Mouth
+<OPTION>A Better Question is How Can I Leave?
+</SELECT>
+<!--ONLY CHANGE THE ABOVE SECTION!!-->
+
+<BR>
+<P>Home Page URL: <INPUT TYPE="text" NAME="url" SIZE="50" VALUE="http://"><br></P>
+<P>Home Page Title: <INPUT TYPE="text" NAME="title" SIZE="25"><br></P>
+<P>Comments:<br><textarea name=comments COLS=60 ROWS=4></textarea></P>
+<P><INPUT TYPE="submit" VALUE="Sign Guestbook"></P>
+</FORM>
+</Body>
+</html>
