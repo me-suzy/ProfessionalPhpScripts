@@ -1,0 +1,10 @@
+<CENTER>
+<HR WIDTH=400>
+<FONT FACE="arial,helvetica" SIZE=2 COLOR=000000>
+<A HREF="http://getperl.virtualave.net">EasySearch</A><BR>
+Copyright 1999 by Thomas J. Delorme<BR>
+All Rights Reserved.<BR>
+</FONT>
+</CENTER>
+</BODY>
+</HTML>
