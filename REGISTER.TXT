@@ -1,0 +1,48 @@
+README file for register.exe utility provided with CGIMailer
+version 1.20
+
+NOTE: Register.exe provided in this package will work only
+with CGIMailer version 1.20.
+
+
+Register.exe is registration utility that will disable messages
+wich CGIMailer appends to all response pages.
+To use register.exe you must obtain an registration key.
+For information on obtaining an registration key see readme.txt.
+
+When you obtain an registration key do the following to register
+CGIMailer version 1.20:
+
+	- Copy register.exe and cgimail.exe to the same directory.
+
+	IN ORDER TO register.exe WORK CORRECTLY YOU MUST USE
+	register.exe BINARY FROM THE SAME PACKAGE AS YOUR
+	cgimail.exe BINARY IS.
+
+
+	- Run register.exe
+	When You start register.exe it will display dialog box with
+	place provided to enter registration key.
+
+
+	- Type in registration key
+
+	BE SURE TO TYPE REGISTRATION KEY CORRECTLY
+
+	Registration key is case sensitive
+
+	Do NOT type any leading or trailing spaces or tabs
+
+
+	- Click on OK button
+
+
+	- After You click on OK button You will get an dialog box with
+	following message:
+
+	CGIMailer is now registered.
+
+
+After this CGImailer registration is completed and pages sent
+over the network will no longer have attached message. 
+
