@@ -1,0 +1,30 @@
+Argentina|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Australia|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Belgium|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Brazil|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Canada|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+China|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Denmark|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Finland|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+France|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Germany|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Hong Kong|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+India|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Ireland|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Israel|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Italy|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Japan|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Mexico|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Netherlands|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+New Zealand|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Norway|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Russian Federation|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Singapore|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Spain|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Sweden|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Switzerland|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Taiwan|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+UAE|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+USA|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+United Kingdom|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
+Other|http://www.go2.com.py/pop.shtml|/data1/hypermart.net/go2cgi/delay.txt|<a href="domain.com"><img src="banner.gif"></a>
