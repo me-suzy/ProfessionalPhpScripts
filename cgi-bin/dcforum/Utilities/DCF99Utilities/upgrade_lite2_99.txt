@@ -1,0 +1,20 @@
+UPGRADING TO DCFORUM99 Ver 1.1 FROM DCFORUMLITE Ver 2.0
+=================================================================
+
+Upgrading from DCForumLite Ver 2.0 to DCF99 Ver 1.1 is really simple.
+
+1) Remove auth_setup_file.txt and board_setup_file.txt from User_info
+2) Create "private_dcforum" directory under your cgi-bin/dcforum folder
+3) Change permission of this directory to 777
+4) Edit your dcforum.setup (one that you are currently using).  Uncomment
+   $privatedir and $privateext.
+5) Define $privatedir, the directory location of "private_dcforum" you
+   just created
+6) Edit all the *.cgi file - you should check the very first line of each script
+   to make sure that it points to the correct location of Perl on your server
+   Additionally, make sure $path is defined correctly.
+7) Upload (In ASCII Mode) *.cgi and *.pl files to your server...the only files
+   you don't need to upload is *.setup files
+
+That's it!
+
