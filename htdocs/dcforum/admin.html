@@ -1,0 +1,986 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>DCForum Administration User's Guide</title>
+</head>
+<style type="text/css">
+P  {
+	font-size : small;
+	font-family : verdana;
+	color : #000099;
+}
+
+H1  {
+	font-size : medium;
+	font-family : verdana;
+	color : #000099;
+	background : #EEEEEE;
+}
+
+H2  {
+	font-size : medium;
+	font-family : verdana;
+	color : #000099;
+	background : #EEEEEE;
+}
+
+H3  {
+	font-size : small;
+	font-family : verdana;
+	font-style : bold;
+	color : #000099;
+}
+
+BODY  {
+	font-size : small;
+	font-family : verdana;
+	color : #000099;
+}
+
+</style>
+
+<body>
+
+<h1>
+DCForum Administration User's Guide
+</h1>
+<p>
+DCForum offers a comprehensive administration tools
+to help you effectively manage your discussion forum.
+This user's guide assumes that you have already successfully
+installed DCForum on your web site.  If you have not yet
+installed DCForum, please refer to readme.txt and install_*.txt
+files and install it now.
+</p>
+
+<h2>Table of Contents</h2>
+<ol>
+<li><A href="#1">Getting started...</A>
+<li><A href="#2">Post-installation configuration</A>
+<li><A href="#3">Setting up conferences and forums</A>
+<li><A href="#4">Managing user accounts</A>
+<li><A href="#5">Managing conferences and forums</A>
+<li><A href="#6">Managing private forums</A>
+<li><A href="#7">Managing topics and messages</A>
+<li><A href="#8">Using special administration feature</A>
+<li><A href="#9">Using&nbsp;data utilities</A>
+<li><A href="#10">Using other misc utilities</A></li>
+<li><A href="#11">Functions</A></li>
+</ol>
+<h2>1.&nbsp;<a name="1">Getting started...</a></h2>
+<p>
+      
+DCForum administration utility is a browser-based program that
+will help you setup and maintain your discussion forum. It
+includes many functions listed in the <a href="#11">Functions</a> section.
+
+<p>
+After the installation, you must do the following to complete
+forum setup:
+
+<ol>
+<li>Set up forum title, time, date, and other options
+<li>Create conferences
+<li>Create forums
+<li>Customize interface
+</ol>
+
+Please read carefully section 2 and 3 on "Post-installation configuration" and
+"Setting up conferences and forums".  Other sections can be used as a reference.
+
+
+<h2>2. <a name="2">Post-installation configuration</a></h2>
+
+After the initial installation, the first step
+in setting up your forum is to specify the forum title, time/date,
+security settings and other forum options.  You can modify
+these setting by clicking on the &quot;Forum Settings&quot; link
+in the DCAdmin's menu.
+
+<h3>Forum Title and Time Settings</h3>
+
+<ul>
+	<ol>
+	<li><strong>Forum Title</strong> - Time of the forum - displayed on every page.
+	<li><strong>Time Offset</strong> 
+        - You localtime offset with respect to
+	GMT.  For example, &quot;-5&quot; for New York, USA.
+	<li><strong>Time Zone</strong> - 
+        You localtime time zone.  For example, &quot;EST&quot;.
+	<li><strong>Date Format</strong> - Date format you wish to use.  Options are:
+	<br>mmm-dd-yy (Jan-30-99)
+   <br>dd-mmm-yy (30-Jan-99)
+   <br>mm-dd-yy (01-30-99)
+   <br>dd-mm-yy (30-01-99)</li> 
+</ol>
+</ul>
+
+<h3>Forum Security Settings</h3>
+
+<ul>
+	<ol>
+	<li><STRONG>Admin email address </STRONG>   - enter administrator's email address
+	<li><STRONG>Sendmail path </STRONG>  - specify sendmail path (UNIX).  Not needed
+	for NT server.
+	<li><STRONG>SMTP server </STRONG>- specify smtp server (NT only).  NOTE:
+	&quot;Admin email address&quot; must be a valid account on this smtp server.
+	<li><STRONG>Email registration </STRONG>  - If &quot;on&quot;, a random password
+	    is generated during registration and sent to the user
+		 via email.  This option forces users to submit
+		 valid email address.
+	<li><STRONG>Enable user registration </STRONG>- If &quot;on&quot;, users will be able to
+	    register.
+	<li><STRONG>Default group </STRONG>  - User group assigned to users when
+	    they register.
+	<li><STRONG>Activate user account when they register 
+    </STRONG>- If &quot;on&quot;,
+	    the user account status will be &quot;on&quot; on registration.
+	<li><STRONG>Allow remembering of password </STRONG>    - If &quot;on&quot;, users will have
+	    option to check &quot;Remember my password&quot; checkbox when they
+		 first log on.  In this case, they do not have to login again
+		 during their next visit.
+	<li><STRONG>Notify admin on user registration 
+    </STRONG>     - If &quot;on&quot;, an email notification
+	    will be sent to the administrator when someone new registers.
+	<li><STRONG>Notify user on act/deactivation </STRONG>    - If &quot;on&quot;, users will be notified
+	    if their account status is changed.
+	<li><STRONG>Allow users to modify account information 
+    </STRONG>      - If &quot;on&quot;, users will
+	    have an option to change their account
+		 information in the User Menu.
+	<li><STRONG>Allow users to change password </STRONG>     - If &quot;on&quot;, users will have an option
+	    to change their password in their User Menu.
+	<li><STRONG>Bad email list </STRONG>   - The domain names of email services you want
+	    to block during registration.
+	<li><STRONG>List bad words you want to block </STRONG>- Filters bad words with &quot;#####&quot;.</li>          
+                  
+	</ol>
+</ul>
+
+<h3>Forum Color and Font Settings</h3>
+
+<ul>
+	<ol>
+	<li><STRONG>Style 0 </STRONG>  - Background color and font style for top table row
+	    containing the description of each column fields.
+	<li><STRONG>Style 1 and 2 </STRONG>    - Alternating background color and font 
+		style for table rows
+	   for listing.
+	<li><STRONG>Style 3 </STRONG>  - Background color and font style for navigation links.
+	<li><STRONG>Style 4 </STRONG>  - Background color and font style for menus above
+	    the navigation links.
+	<li><STRONG>Top Menu </STRONG>  - Background color and font style for menu buttons.
+	<li><STRONG>Special Font Color </STRONG>- Color for special notices - RED by default.</li>         
+                 
+	</ol>
+</ul>
+
+<p>
+<b>Note:</b>The forum color and font setting
+can only control the tables and menu outputs.
+For a more advanced customization, you'll need to modify
+dcforum.htmlt template file.  See &quot;<A href="#custom">Customizing Forum Layout</A>&quot;.
+</p>
+
+<h3>Forum Options</h3>
+
+<ul>
+	<ol>
+	<li><STRONG>Number of threads to display per page 
+    </STRONG>       - Sets the total number
+	of threads to display in topic listing.
+	<li><STRONG>Maximum thread levels </STRONG>   - Sets the total number of message
+	indentation for replies.
+	<li><STRONG>Spacing between icons at each level 
+    </STRONG>      - Sets the blank spacing
+	between icons at different message level.
+	<li><STRONG>Maximum subject length displayed </STRONG>    - Sets the total number of
+	characters to display in the subject field.
+	<li><STRONG>Autosensing starts how many messages? 
+    </STRONG>     - Sets the number
+	of replies in a topic when the autosensing is enabled.  If the number
+	of replies in a topic exceeds this number, the messages
+	are shown one at a time.
+	<li><STRONG>Maximum threads to keep per board 
+    </STRONG>      - If the number of threads
+	in a forum exceeds this number, the oldest thread is either
+	deleted or archived.
+	<li><STRONG>Automatically archive threads instead of 
+    deleting them? </STRONG>       - If &quot;on&quot;,
+	the oldest thread is archived instead of removed.
+	<li><STRONG>Table width </STRONG>  - size of table controlling the output display.
+	<li><STRONG>Use icons navigation menus? </STRONG>    - If &quot;on&quot;, GIF image icons are
+	used for menu buttons.
+	<li><STRONG>Use icons in table of contents </STRONG>      - If &quot;on&quot;, GIF image icons are
+	used for table of contents.
+	<li><STRONG>Display caption below subjects </STRONG>    - If &quot;on&quot;, some portion of
+	message is displayed in the topic listing.
+	<li><STRONG>Caption length in characters </STRONG>    - The total number of
+	characters for displaying the caption.
+	<li><STRONG>Hide private forums from forum listing? 
+    </STRONG>      - If &quot;on&quot;, private
+	forums are not displayed for those who do not have access.
+	<li><STRONG>Show original message in posting form? 
+    </STRONG>      - If &quot;on&quot;, the original
+	message is displayed in the posting form.
+	<li><STRONG>Editing of messages allowed? </STRONG>    - If &quot;on&quot;, users will be able to edit
+	their messages.
+	<li><STRONG>If editing is allowed, specify time limits? 
+    </STRONG>       - If nonzero,
+	users will be able to edit their message within this limit.
+	If 0, then users will be able to edit this message anytime.
+	<li><STRONG>Use of HTML Tags allowed? </STRONG>     - If &quot;on&quot;, users will be able to use
+	HTML tags.
+	<li><STRONG>Image links allowed? </STRONG>-  If &quot;on&quot;, images will be allowed in the
+	messages.
+	<li><STRONG>Display only conferences in the lobby? 
+    </STRONG>      - If &quot;on&quot;, only
+	the conferences will be displayed in the lobby.
+	<li><STRONG>Threaded discussion? </STRONG>- If &quot;on&quot;, topics are fully threaded.
+	If &quot;off&quot;, topics are linear style.
+	<li><STRONG>Reverse threading? </STRONG>- If &quot;on&quot;, the oldest posts are posted
+	at the bottom.
+	<li><STRONG>Indent threaded messages? </STRONG>   - If &quot;on&quot;, the message boxes
+	in the fully-threaded topics will be indented to show
+	their relative thread levels.
+	<li><STRONG>Notify admin if new thread is posted 
+    </STRONG>       - If &quot;on&quot;, an email
+	is sent to the administrator when a new thread is posted.
+	<li><STRONG>Notify moderator if new thread is posted 
+    </STRONG>       - If &quot;on&quot;, and
+	email is sent to the moderators when a new thread is posted.
+	<li><STRONG>Email notification function </STRONG>- If &quot;on&quot;, users can
+	select to receive an email if someone replies to that topic.
+	<li><STRONG>Enable subscription? </STRONG>- If &quot;on&quot;, users can subscribe to
+	forums of their choice.  Administrator must use &quot;Send Subscription&quot;
+	feature to send out subscription.
+	<li><STRONG>Allow users to view IP address </STRONG>      - If &quot;on&quot;, users can view other
+	users IP addresses.
+	<li><STRONG>Turn on IP blocking </STRONG>    - If &quot;on&quot;, users using IP addresses
+	in the Bad IP Listing (created by admin) will be unable to post
+	new message.
+	<li><STRONG>Keep track of number of times a topic has 
+    been read? </STRONG>           - If &quot;on&quot;,
+	the number of message views are displayed.
+	<li><STRONG>Turn on user rating feature? </STRONG>     - If &quot;on&quot;, user rating of topics
+	is enabled.
+	<li><STRONG>Allow users to upload files? </STRONG>     - If &quot;on&quot;, users will be able to
+	upload files to the server.
+	<li><STRONG>Upload file size max </STRONG>- Maximum upload file size in kilobytes.</li>          
+              
+	</ol>
+</ul>
+
+
+<h2><a name="3">3.&nbsp; Setting up conferences and forums</a></h2>
+Once forum options are set, the next step in creating
+discussion forum is to create conferences and forums.
+There are couple of things that you should think about
+before you start creating them.
+
+<ul>
+<li><b>Should you setup multiple conferences?</b>
+	A conference is a group of forums belonging to a similar topic.
+	Whether you need multiple conferences or not will depend on how many
+	forums you will be setting up.  If you are going to setup
+	over 10 forums, then it is a good idea to break those forums
+	up into two or more conferences.  On the other hand,
+   if you are only going to set up 5 or 6 forums then you would only
+	need to create a single conference.  In this case, you can create a
+	conference named 'Main' and assign all your forums to this
+	conference.
+<li><b>What type of forums will you need?</b>
+	DCForum supports three types of forums: Public, Protected, and Private.
+	The difference between these forum types is the user accessibility.  
+	If you want to allow everyone to
+   participate without registering, then choose Public forums.  
+	If you want to allow
+   everyone to read but require registration to 
+	post messages, then choose Protected
+   forum.  Private forums are highly exclusive in that,
+	 the users must be elevated to
+   'member' user group in order to qualify to use them.  
+	Additionally, the moderator
+   of that forum must grant access to his/her private forums.
+<li><b>Will you need moderated forums?</b> Moderated forums allow you to preview the messages before they 
+    are posted in the forums. It works with all three forum types. Whether you 
+    need this level of security will depend on your needs.</li>            
+                
+            
+</ul>
+
+<h3>Creating A Conference</h3>
+<ol>
+<li> From DCAdmin menu, choose &quot;Create New Conference&quot;.
+<li> Enter conference name.
+<li> Enter conference description.
+<li> Select conference status. If &quot;off&quot;, all the forums
+     belonging to this conference will not display
+	  in the lobby.
+<li>Click on &quot;Submit&quot; button.</li>       
+</ol>
+
+<p>
+<b>Note:</b> If you have conferences that contain no
+forums, then they will not appear in the conference listings.
+</p>
+
+After you've created all the conferences, we next need to create forums.
+
+<h3>Creating A Forum</h3>
+<ol>
+<li> From DCAdmin menu, choose &quot;Create New Forum&quot;.
+<li> Select a conference - this conference is where
+     this new forum will belong.
+<li> Enter forum name.
+<li> Enter forum description.
+<li> Select forum moderator(s).
+<li> Select forum type.
+<li> Select form mode.
+<li> Select forum status. If &quot;Not Active&quot;, this forum
+     will not
+<li> Click on &quot;Submit&quot; button.</li>        
+</ol>
+
+<p>
+Congratulations!  You have now setup DCForum for your
+web site.  Now, let's customize your forum layout.
+</p>
+
+<h3><a name="custom">Customizing Forum Layout</a></h3>
+DCForum program uses a single template file to generate
+all it's output.  This template file, dcforum.htmlt, is simply an HTML file
+with special tags that are used by the program to
+generate the output.  Hence, editing this one file can change the whole
+look of your discussion forum.  In addition, DCF2000 allows you to
+use different template files for each forum.
+
+
+<p><b>Modifying dcforum.htmlt
+</b></p>
+
+<ol>
+<li> From your /cgi-bin/dcforum directory,
+     download dcforum.htmlt file to your local PC
+	  or workstation. Please remember to use ASCII mode
+     of file transfer when you FTP this file.
+<li> Open dcforum.htmlt in your favorite, plain text editor.
+     For example, use notepad or homesite (http://www.homesite.com).
+<li> Modify dcforum.htmlt as you like.  Just remember not to remove
+     the following DCF tags:
+	  <ul>
+	  <li>$TITLE
+	  <li>$HTTPHEADER
+	  <li>$HEADING
+	  <li>$SUBHEADING
+	  <li>$HTTPHEADER
+	  <li>$MENU
+	  <li>$HTMLOUTPUT
+	  <li>$FORUMLINKS</li>
+	  </ul>
+<li> Edit email link on the bottom of the template file.
+<li>Save and upload this file to /cgi-bin/dcforum 
+    directory.</li>        
+          
+</ol>
+
+Note that if you want to display a banner on every page, you can
+include the banner tag in this template file.
+
+<p><b>Multiple template file
+</b></p>
+
+You can specify different template file for each
+forum simply by creating different dcforum.htmlt file
+and then uploading it to /htdocs/dcforum/forum directory.
+
+<ol>
+<li> Edit dcforum.htmlt template file as directed
+     in &quot;Modifying dcforum.htmlt&quot; section.
+<li>Instead of uploading dcforum.htmlt to the 
+    /cgi-bin/dcforum directory, upload it to /htdocs/dcforum/forum_name where 
+    forum_name is the directory name of the forum in question.</li>       
+         
+                 
+         
+	      
+	        
+</ol>
+
+
+<h2>4.&nbsp;<a name="4">Managing user accounts</a></h2>
+DCForum administration utility features a comprehensive
+user account management system.  Two functions are available in
+the administration menu: create new account and manage user accounts.
+
+<h3>Creating New User Account</h3>In general, you turn &quot;ON&quot; the &quot;Allow user registration&quot; option
+in the forum settings.  This allows users to register
+themselves.  At times, however, you many want to create
+user accounts yourself.  In this case, you can use this
+option.
+
+<ol>
+<li> From DCAdmin menu, choose &quot;Create New Account&quot;.
+<li> Enter username.
+<li> Enter password twice.
+<li> Select user group.
+<li> Enter all other additional fields.
+<li> Select user account status.
+<li>Click on &quot;Submit&quot; button.</li>        
+</ol>
+
+<h3>User Manager</h3>
+User manager allow you to effectively manage your users.
+It allows you to activate, deactivate, remove, and
+modify user accounts.
+
+<ul>
+<p><b>Activate, deactivate, and remove user accounts</b> 
+</p>
+<ol>
+<li> From DCAdmin menu, choose &quot;User manager&quot;.
+<li> From the drop down menu, select all or just the first
+     character of the user account you wish to modify.
+<li> Select an option - activate, deactivate, or remove.  
+     When activate is chosen, only those user accounts
+	  that are &quot;OFF&quot; is listed.  Conversely, only those user accounts
+	  that are &quot;ON&quot; is listed if deactivate option is chosen.
+<li> Click on &quot;Submit&quot; button
+<li> From the user account listing, select user accounts.
+<li> Click on &quot;Submit&quot; button.</li>        
+</ol>
+
+<p><b>Modify user accounts</b> 
+</p>
+<ol>
+<li> From DCAdmin menu, choose &quot;User manager&quot;.
+<li> From the drop down menu, select all or just the first
+     character of the user account you wish to modify.
+<li> Select modify and click on &quot;Submit&quot; button
+<li> From the user account listing, select the
+     account that you wish to modify and click on
+	  &quot;Submit&quot; button.
+<li> Modify user account information in the resulting
+     form.
+<li> Click on &quot;Submit&quot; button.</li>        
+</ol>
+</ul>
+
+
+<h2>5.&nbsp;<a name="5">Managing conferences and forums</a></h2>
+
+Even after your discussion forum is up and running,
+you may still need to manage existing conferences and forums.
+You use the conference and forum manager to manage this task.
+
+<h3>Modify Conference</h3>
+<ol>
+<li> From DCAdmin menu, choose &quot;Modify Conference&quot;
+	 and click on the &quot;Submit&quot; button.
+<li> From the dialog menu, select the conference that
+     you want to modify and then click on &quot;Submit&quot; button.
+<li> Edit conference information you want to modify.
+<li> Click on &quot;Submit&quot; button.</li>        
+</ol>
+
+<h3>Reorder Conferences</h3>
+<ol>
+<li> From DCAdmin menu, choose &quot;Reorder Conferences&quot;
+	 and click on the &quot;Submit&quot; button.
+<li> In the conference listing, number the conference
+     in the order that you which to display.
+	  <b>Be careful not to specify duplicate number!!!</b>
+<li> Carefully preview the conference ordering and make
+     sure there are no duplicate numbers.
+<li>Click on &quot;Submit&quot; button.</li>        
+</ol>
+
+<h3>Remove Conference</h3>
+<ol>
+<li> From DCAdmin menu, choose &quot;Remove Conference&quot;
+     and click on the &quot;Submit&quot; button.
+<li> From the dialog menu, select the conference that 
+    you want to remove and then click on &quot;Submit&quot; button.</li>          
+                  
+              
+</ol>
+
+<h3>Modify Forum</h3>
+<ol>
+<li> From DCAdmin menu, choose &quot;Modify Forum&quot;
+	 and click on the &quot;Submit&quot; button.
+<li> From the dialog menu, select the forum that
+     you want to modify and then click on &quot;Submit&quot; button.
+<li> Edit forum information you want to modify.
+<li> Click on &quot;Submit&quot; button.</li>    
+</ol>
+
+<h3>Reorder Forums</h3>
+<ol>
+<li> From DCAdmin menu, choose &quot;Reorder Forums&quot;
+	 and click on the &quot;Submit&quot; button.
+<li> In the conference listing, number the forum
+     in the order that you which to display.
+	  <b>Be careful not to specify duplicate number!!!</b>
+<li> Carefully preview the forum ordering and make
+     sure there are no duplicate numbers.
+<li>Click on &quot;Submit&quot; button.</li>        
+</ol>
+
+<h3>Remove Forum</h3>
+<b>NOTE: Removing a forum deletes all the messages and topics
+posted in that forum.  This is not a reversible process.</b>
+
+<ol>
+<li> From DCAdmin menu, choose &quot;Remove Forum&quot;
+     and click on the &quot;Submit&quot; button.
+<li>From the dialog menu, select the forum that you 
+    want to remove and then click on &quot;Submit&quot; button.</li>           
+                       
+</ol>
+
+<h2>6.&nbsp;<a name="6">Managing private forums</a></h2>
+
+Private forums are exclusive in that the administrator or
+the moderator of each private forum must grant access to
+users.  The user access is managed using the Private forum
+user manager.  In order for a user to have access to a private
+forum:
+
+<ol>
+<li> The user must have &quot;member&quot; user group - if the user
+     belong to &quot;normal&quot; user group, then you must
+	  promote this user to &quot;member&quot; user group using
+	  the User Manager. See &quot;Managing user accounts&quot; on 
+	  how to accomplish this task.
+<li>The administrator or the moderator must use private 
+    forum user manager to grant access.</li>        
+              
+           
+</ol>
+
+<h3>Granting access to all &quot;member&quot; users</h3>
+
+<ol>
+<li> Click on User Manager in the Private Forum
+     Manager.
+<li> Select a forum.
+<li> Click on &quot;Allow All Members&quot; button.</li>            
+</ol>
+
+<h3>Granting access to selective &quot;member&quot; users</h3>
+
+<ol>
+<li> Click on User Manager in the Private Forum
+     Manager.
+<li> Select a forum.
+<li> Click on &quot;Add/Remove Users&quot; button to display
+     all member users. <b>Note:</b> Users must have 
+	  &quot;member&quot; user group to appear in this list.
+<li> From the list of users, choose users you want
+     to grant access.
+<li>Click on &quot;Submit&quot; button.</li>      
+</ol>
+
+<h2>7.&nbsp;<a name="7">Managing topics and messages</a></h2>
+The board manager is used to manage topics and messages.
+The available functions are:
+<ul>
+<li> Unqueue messages - preview and unqueue messages
+     to moderated forums.
+<li> Lock threads - Make topics read-only.
+<li> Unlock threads - Undo locking threads
+<li> Archive threads - Make topics read-only and move it to archive
+<li> Move threads - Move current threads from one forum to another
+<li> Remove threads - Delete topics
+<li>Remove messages - Remove messages from a topic</li>                
+</ul>
+
+<h3> Unqueue messages</h3>
+<ol>
+<li> Select &quot;Unqueue Messages&quot; from the board manager.
+<li> Select a forum from the list of available moderated forums.
+     If &quot;In Queue&quot; field displays &quot;0&quot;, then there is no message
+	  in the queue.
+<li> Click on &quot;Submit&quot; button to bring up all messages in
+     the queue.
+<li> Preview each message and select &quot;unqueue&quot; if you want to post
+     the message.  Likewise, select &quot;delete&quot; if you want to
+	  remove the message.  Not selecting other option will
+	  leave the message in the queue.
+<li> Click on &quot;Submit&quot; to unqueue and delete 
+    messages.</li>                
+</ol>
+
+<h3> Lock threads</h3>
+<ol>
+<li> Select &quot;Lock Threads&quot; from the board manager.
+<li> Select a forum from the list of available forums.
+<li>Click on &quot;Submit&quot; button to list topics
+<li> Select topics you wish to make read-only.
+<li> Click on &quot;Submit&quot; to lock selected 
+    threads.</li>              
+</ol>
+
+<h3> Unlock threads</h3>
+<ol>
+<li> Select &quot;Unlock Threads&quot; from the board manager.
+<li> Select a forum from the list of available forums.
+<li>Click on &quot;Submit&quot; button to list topics
+<li> Select topics you wish to unlock.
+<li> Click on &quot;Submit&quot; to unlock selected 
+    threads.</li>              
+</ol>
+
+<h3> Archive threads</h3>
+
+<ol>
+<li> Select &quot;Archive Threads&quot; from the board manager.
+<li> Select a forum from the list of available forums.
+<li>Click on &quot;Submit&quot; button to list topics
+<li> Select topics you wish to archive.
+<li> Click on &quot;Submit&quot; to archive selected 
+    threads.</li>              
+</ol>
+
+<h3> Move threads</h3>
+
+<ol>
+<li> Select &quot;Move Threads&quot; from the board manager.
+<li> Select a forum from the list of available forums.
+     The threads you select from this forum will be moved
+	  to another forum that you select later.
+<li>Click on &quot;Submit&quot; button to list topics.
+<li>From &quot;Move to Which Forum?&quot; dropdown menu, select
+     the destination forum.
+<li> Select topics you wish to move.
+<li>Click on &quot;Submit&quot; to move selected 
+    threads.</li>              
+</ol>
+
+
+<h3> Remove threads</h3>
+
+<ol>
+<li>  Select &quot;Remove Threads&quot; from the board manager.
+<li> Select a forum from the list of available forums.
+  <LI>     Click on &quot;Submit&quot; button
+     to list topics.
+<li> Select topics you wish to remove.
+<li> Click on &quot;Submit&quot; to remove selected 
+    threads.</li>              
+</ol>
+
+<h3> Remove messages</h3>
+
+<ol>
+<li> Select &quot;Remove Messages&quot; from the board manager.
+<li>         
+             Select a
+	  forum from the list of available forums.
+<li>     Click on &quot;Submit&quot; button
+     to list topics.
+<li> Select the topic that contains the messages that you 
+  wish to remove.
+  <LI>Click on &quot;Submit&quot; button to list messages in this selected topic.&nbsp; 
+  Please note that the original message cannot be removed.
+  <LI>Preview each message and click on &quot;Select to remove the following message&quot; 
+  checkbox if you wish to remove them.
+<li> Click on &quot;Submit&quot; to remove selected 
+    messages.</li>              
+</ol>
+
+<h2><a name="8">8.&nbsp; Using special administration feature</a></h2>
+DCForum includes the following special administration features:
+<ul>
+<li>Announcement Manager
+<li>Custom Email Manager
+<li>Sending Email to Forum Users
+<li>Subscription Sender</li>  
+</ul>
+
+<h3>Announcement Manager</h3>
+Announcement is a read-only message that you can post
+for forum users to view.  If there is an announcement,
+then &quot;Announcement&quot; link will appear in the LOBBY.  Use this
+feature for posting general messages.
+
+<p>
+Adding new announcement
+</p>
+<ol>
+<li>Select &quot;Announcement Manager&quot; from the admin functions.
+<li>In the &quot;Post announcement&quot; form, complete the subject 
+    and message boxes
+<li>Click &quot;Submit&quot; button.</li>    
+</ol>
+
+<p>
+Modifying existing announcement
+</p>
+<ol>
+<li>Select &quot;Announcement Manager&quot; from the admin functions.
+<li>Select the announcement you wish to modify.
+<li>Modify subject and message.
+<li>Click &quot;Submit&quot; button.</li>    
+</ol>
+
+<p>
+Removing existing announcement
+</p>
+<ol>
+<li>Select &quot;Announcement Manager&quot; from the admin functions.
+<li>Select the announcements you wish to remove.
+<li>Click &quot;Submit&quot; button.</li>    
+</ol>
+
+
+<h3>Custom Email Manager</h3>
+You can modify the email messages for the following emails
+sent by DCForum:
+<ul>
+<li>Email registration message
+<li>Email notification message
+<li>Account status change email message 
+    
+<li>Subscription email message 
+    
+<li>Lost password email message</li>   
+</ul>
+
+<p>
+Email registration message
+</p>
+<ol>
+<li>Select &quot;Customize Emails&quot; from the admin functions.
+<li>Select &quot;Email registration message&quot;.
+<li>Click &quot;Submit&quot; button.
+<li>Edit subject and message.  Be sure not to alter
+&quot;USERNAME_PASSWORD&quot;.
+<li>Click on &quot;Submit&quot; button</li>   
+</ol>
+
+<p>
+Email notification message
+</p>
+<ol>
+<li>Select &quot;Customize Emails&quot; from the admin functions.
+<li>Select &quot;Email notification message&quot;.
+<li>Click &quot;Submit&quot; button.
+<li>Edit subject and message.  Be sure not to alter
+&quot;EMAIL_NOTIFICATION_MESSAGE&quot;.
+<li>Click on &quot;Submit&quot; button</li>   
+</ol>
+
+<p>
+Account status 
+change email message
+</p>
+<ol>
+<li>Select &quot;Customize Emails&quot; from the admin functions.
+<li>Select &quot;Account status change email message&quot;.
+<li>Click &quot;Submit&quot; button.
+<li>Edit subject and message.  Be sure not to alter
+&quot;ACCOUNT_CHANGE&quot;.
+<li>Click on &quot;Submit&quot; button</li>   
+</ol>
+
+<p>
+Subscription email message
+</p>
+<ol>
+<li>Select &quot;Customize Emails&quot; from the admin functions.
+<li>Select &quot;Subscription email message&quot;.
+<li>Click &quot;Submit&quot; button.
+<li>       Edit subject and
+message.
+<li>Click on &quot;Submit&quot; button</li>   
+</ol>
+
+<p>
+Lost password email message
+</p>
+<ol>
+<li>Select &quot;Customize Emails&quot; from the admin functions.
+<li>Select &quot;Lost password email message&quot;.
+<li>Click &quot;Submit&quot; button.
+<li>Edit subject and message.  Be sure not to alter
+&quot;USERNAME_PASSWORD&quot;.
+<li>Click on &quot;Submit&quot; button</li>   
+</ol>
+
+
+
+
+<h3>Sending Email to Forum Users</h3>
+Using this feature, you can send email to all your users
+or just to a select group of users.
+
+<ol>
+<li>Choose email recipients by selecting a user group.
+<li>Compose your email by entering subject and message.
+<li>Click &quot;Submit&quot; button.</li>    
+</ol>
+
+<h3>Sending Subscriptions</h3>
+Using this feature, you can send subscriptions to
+selected users who wish to receive them.
+
+<ol>
+<li>Select &quot;Send Announcement&quot; link from 
+    admin functions.</li>            
+</ol>
+
+<h2><a name="9">  9.</a>Using Data 
+Utilities</h2>
+DCForum is a very robust and stable program.  However, at times,
+you may still lose data due to server concurrency problems.
+You can recover most of the data using the data utilities.  There
+DCForum includes the following special data utilities:
+<ul>
+<li>Rebuild Database
+<li>Backup Forum Files
+<li>Recover Forum Files</li>    
+</ul>
+
+<h3>Rebuilding Database</h3>
+DCForum keeps current topics in database.txt file.
+At time, this file may become corrupted.  In this case,
+use this utility to rebuild it.
+<ol>
+<li>Select &quot;Rebuild Database&quot; link from the Data Utilities.
+<li>Select a forum and click &quot;Submit&quot; button.
+<li>Wait until the utility completes the rebuilding 
+    process.</li>       
+         
+</ol>
+
+<h3>Backup Forum Files</h3>
+This utility will back up *.txt files in the
+User_info directory.
+
+<ol>
+<li>Select &quot;Backup Forum Files&quot; link from the 
+    Data Utilities.</li>        
+          
+</ol>
+
+<h3>Recover Forum Files</h3>
+This utility will allow you to recover any
+or some *.txt files in User_info directory from
+the backup copies.
+
+<ol>
+<li>Select &quot;Recover Forum Files&quot; link from the Data Utilities.
+<li>Select files you want to recover.
+<li>Click &quot;Submit&quot; button.</li>    
+</ol>
+
+
+<h2>10.&nbsp;<a name="10">Using other misc utilities</a></h2>
+DCForum includes the following misc utilities:
+<ul>
+<li>Update Threads
+<li>Remove Session Files
+<li>Remove All Session Files
+<li>Remove Temporary Files</li>    
+</ul>
+
+<h3>Update Threads</h3>
+This utility will update all *.html topics from Data/*.txt topic
+database.  If you change dcforum.htmlt template file, run this
+utility to update the topics.
+
+<h3>Remove Session Files</h3>
+This utility will clean up temporary session files in
+User_info/Sessions directory that is more than a day old.  
+Run this utility
+once a while to clean up this directory.
+
+<h3>Remove All Session Files</h3>
+This utility will clean up all session files in
+User_info/Sessions directory that is more than a day old. 
+In addition to temporary session files, the session files
+for &quot;Remember My Password&quot; users are removed as well.
+
+<h3>Remove Temporary Files</h3>
+This utility will clean up files in User_info/Temp directory.
+
+<h2>11.&nbsp;<a name="11">Functions</a></h2>
+
+<ul>
+<li>Menu
+	<ul>
+   <li>Logout - logout
+	<li>Admin - back to admin's main page
+	<li>Lobby - forum's lobby page</li>        
+	</ul>
+<li>General Administration
+	<ul>
+   <li>Shutdown DCForum
+   <li>Forum Settings</li>  
+	</ul>
+<li>User Administration
+	<ul>
+	<li>Create New Account
+	<li>User Manager</li>  
+	</ul>
+<li>Conference Manager
+	<ul>
+   <li>Create New Conference
+   <li>Modify Existing Conference
+   <li>Reorder Conference Listing
+   <li>Remove Existing Conference</li>    
+	</ul>
+<li>Forum Manager
+	<ul>
+   <li>Create New Forum
+   <li>Modify Existing Forum
+   <li>Reorder Forum Listing
+   <li>Remove Existing Forum</li>    
+	</ul>
+<li>Private Forum User Manager
+	<ul>
+	<li>User Manager</li>  
+	</ul>
+<li>Board Manager
+	<ul>
+	<li>Unqueue Messages
+	<li>Lock Threads
+	<li>Unlock Threads
+	<li>Archive Threads
+	<li>Move Threads
+	<li>Remove Threads
+	<li>Remove Messages</li>  
+	</ul>
+<li>Admin Functions
+	<ul>
+   <li>Announcement Manager
+	<li>Customize Email Messages
+	<li>Send EMail - Email list manager
+	<li>Send Subscription</li>  
+	</ul>
+<li>Data utilities
+	<ul>
+   <li>Rebuild Database
+	<li>Backup Forum Files
+	<li>Recover Forum Files</li>    
+	</ul>
+<li>Misc Utilities
+	<ul>
+   <li>Update Threads
+	<li>Remove Session Files
+	<li>Remove All Session Files
+	<li>Remove Temp Files</li>    
+	</ul></li>
+</ul>
+
+
+<hr>
+		Powered by DCF2000 &copy;1997-2000 by <a href="http://www.dcscripts.com">DCScripts</a>.
+		All rights reserved.	
+
+
+</body>
+</html>
