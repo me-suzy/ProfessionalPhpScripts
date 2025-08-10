@@ -1,0 +1,79 @@
+<html>
+<title>Emood Settings</title>
+<h3 align=center>Emood Settings</h3><p>
+<table align=center style="background-color:silver;border:2px outset;color:black">
+
+
+<!--CHANGE PATH TO CGI SO IT IS CORRECT-->
+<form action="http://path/to/cgi-bin/setemood.pl" style="margin:0px">
+<tr>
+<td align=center colspan=4 bgcolor=lightblue><b>Set Mood</b>
+<tr>
+<td><input type=radio value=0 name="index" checked="true"><img src=images/smileys/happy.gif>
+<td><input type=radio value=1 name="index"><img src=images/smileys/mad.gif>
+<td><input type=radio value=2 name="index"><img src=images/smileys/sad.gif>
+<td><input type=radio value=16 name="index"><img src=images/smileys/devious.gif>
+<tr>
+<td><input type=radio value=3 name="index"><img src=images/smileys/upset.gif>
+<td><input type=radio value=4 name="index"><img src=images/smileys/sick.gif>
+<td><input type=radio value=5 name="index"><img src=images/smileys/silly.gif>
+<td><input type=radio value=17 name="index"><img src=images/smileys/bugeyes.gif>
+<tr>
+<td><input type=radio value=6 name="index"><img src=images/smileys/groovy.gif>
+<td><input type=radio value=7 name="index"><img src=images/smileys/wink.gif>
+<td><input type=radio value=8 name="index"><img src=images/smileys/annoyed.gif>
+<td><input type=radio value=18 name="index"><img src=images/smileys/evil.gif>
+<tr>
+<td><input type=radio value=9 name="index"><img src=images/smileys/blank.gif>
+<td><input type=radio value=10 name="index"><img src=images/smileys/goofy.gif>
+<td><input type=radio value=11 name="index"><img src=images/smileys/unhappy.gif>
+<td><input type=radio value=19 name="index"><img src=images/smileys/naughty.gif>
+<tr>
+<td><input type=radio value=12 name="index"><img src=images/smileys/laugh.gif>
+<td><input type=radio value=13 name="index"><img src=images/smileys/bigsmile2.gif>
+<td><input type=radio value=14 name="index"><img src=images/smileys/loved.gif>
+<td><input type=radio value=20 name="index"><img src=images/smileys/ohwell.gif>
+<tr>
+<td><input type=radio value=15 name="index"><img src=images/smileys/stunned.gif>
+<td><input type=radio value=21 name="index"><img src=images/smileys/pimp.gif>
+<td><input type= radio value=22 name="index"><img src=images/smileys/smoking.gif>
+<td><input type=radio value=23 name="index"><img src=images/smileys/warped.gif>
+<tr>
+<td><input type=radio value=24 name="index"><img src=images/smileys/tired.gif>
+<td><input type=radio value=25 name="index"><img src=images/smileys/bigsmile.gif>
+<td><input type=radio value=26 name="index"><img src=images/smileys/confused.gif>
+<td><input type=radio value=27 name="index"><img src=images/smileys/licklips.gif>
+<tr>
+<td><input type=radio value=28 name="index"><img src=images/smileys/yawn.gif>
+<td><input type=radio value=29 name="index"><img src=images/smileys/rotate.gif>
+<td><input type=radio value=30 name="index"><img src=images/smileys/rolleyes.gif>
+<td><input type=radio value=31 name="index"><img src=images/smileys/alien.gif>
+<tr>
+<td><input type=radio value=32 name="index"><img src=images/smileys/cool.gif>
+<td><input type=radio value=33 name="index"><img src=images/smileys/lonely.gif>
+<td><input type=radio value=34 name="index"><img src=images/smileys/hot.gif>
+<td><input type=radio value=35 name="index"><img src=images/smileys/uhoh.gif>
+<tr>
+<td colspan=4 align=center bgcolor=lightblue>
+Current Emood:<br>
+
+<!--CHANGE IFRAME SRC ATTRIBUTE TO CORRECT PATH OF EMOOD.PL-->
+
+<iframe height=25 width=100% border=0 frameborder=1 marginwidth=0 marginheight=0 src="http://path/to/cgi-bin/emood.pl"></iframe>
+<tr>
+<td colspan=1>
+<b>Password:</b>
+<td colspan=3>
+<input type=password style="width:100%;font-family:verdana" name="password">
+<tr>
+<td colspan=1>
+<b>Mood:</b>
+<td colspan=3>
+<input type=text style="width:100%;font-family:verdana" name="caption">
+<tr>
+<td colspan=4 align=center valign=middle>
+<input type="submit" value="Change Mood">&nbsp;
+<input type="reset" value="Reset">
+</form>
+</table>
+</html>
