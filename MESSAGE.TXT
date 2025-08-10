@@ -1,0 +1,9 @@
+This message is created by <%SYS.MAILER%>.
+Message template: <%SYS.MSGTEMPLATE%>.
+----------------------------------------------------------
+Message is recived by <%ENV.SERVER_NAME%> via e-mail form
+from <%ENV.HTTP_HOST%> (<%ENV.REMOTE_ADDR%>).
+----------------------------------------------------------
+FROM: <%REQ.FROM%>
+
+<%REQ.Message%>
