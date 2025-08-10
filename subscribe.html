@@ -1,0 +1,271 @@
+<BODY BGCOLOR="#FFFFFF">
+<CENTER>
+<P>
+<TABLE WIDTH=500>
+<TR>
+<TD>
+<B>
+This is the actual, for-real BNB newsletter signup script. As long as 
+you are looking, please consider subscribing. ;-) 
+</B>
+</TD>
+</TR>
+</TABLE>
+<P>
+<table WIDTH=125 BORDER=0 CELLSPACING=0>
+<tr> 
+  <td width="100%" valign="top" align="center" bgcolor="#0066cc" 
+    height="20"><strong><font color="#FFFFFF" size="2" face="Verdana, Arial">
+<A NAME="NEWSLETTER">
+    BigNoseBird Newsletter</font></strong></td>
+</tr>
+<tr> 
+ <td valign="top" bgcolor="#99ccff" width="100%" >
+  <font face="Arial, Helvetica" size="1"><font color="#000000">
+  <FORM ACTION="/cgi-bin/subscribe.cgi" METHOD="POST">
+  <INPUT TYPE="RADIO" NAME="action" VALUE="subscribe" checked>Subscribe<BR>
+  <INPUT TYPE="RADIO" NAME="action" VALUE="unsubscribe">Un-Subscribe<BR>
+  <CENTER>
+  <INPUT TYPE="TEXT" NAME="email" VALUE="your-email" SIZE=10 MAXLENGTH=100><BR>
+  <INPUT TYPE="HIDDEN" NAME="datafile" VALUE="subscribe">
+  <INPUT TYPE="SUBMIT" VALUE="DO IT!"><BR>
+  Sign up today to receive
+  our low volume newsletter.
+  Tips, tricks, news, and
+  whatever else crosses our minds.
+  <BR>
+  <A HREF="/privacy.shtml">Privacy Statement</A> 
+  </CENTER>
+           </font>
+           </font>
+    </FORM>
+   </td>
+ </tr>
+</table>
+
+<H1>Snapshot of Admin Screen</H1>
+<CENTER>
+ <TABLE WIDTH=550 CELLPADDING=2 BORDER=1 BGCOLOR="#FFFF00">
+  <TR>
+   <TD ALIGN=CENTER>
+     <H2>BNB's NoMoDoMo </H2>
+     <TABLE WIDTH=500 BORDER=1 CELLPADDING=5 CELLSPACING=0>
+      <TR>
+      <TD BGCOLOR="99FF99">
+       &nbsp;<BR>
+      <FONT FACE="ARIAL">
+      Welcome to BNB's NoMoDomo Subscription Manager Control
+      Panel! The forms below will allow you to manage your
+      mailing lists, create and edit your letters, and send
+      out mailings.
+      <BR>&nbsp;
+       </FONT>
+      </TD>
+      </TR>
+
+      <TR>
+      <TD>
+
+     <FORM>
+     <TABLE WIDTH=500 BGCOLOR="#CCCCCC" BORDER=1 CELLPADDING=5 CELLSPACING=0>
+      <TR>
+       <TD COLSPAN=2 BGCOLOR="#CCCCCC">
+        <CENTER><FONT SIZE=+1><B>Maintain Mailing Lists</B></FONT></CENTER>
+      <FONT SIZE=-1 FACE="ARIAL">
+      This form allows you to edit the mailing lists collected
+      by your BNB Subscription Manager. Please use the selection
+      bar to pick the mailing list file you wish to review. 
+      You may also enter an e-mail address, or part of one into
+      the search box and the script will return all all matching
+      records. If you want to select the entire contents of a file,
+      just leave the search box empty.
+      Click on GO-GET-EM! when ready.
+       </FONT>
+       </TD>
+      <TR>
+      <TD  BGCOLOR="#CCE6FF">
+        <B>Please select a list file</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+     <SELECT NAME="filename">
+<OPTION VALUE="subscribe.mbz"> subscribe.mbz
+<OPTION VALUE="test.mbz"> test.mbz
+</SELECT>
+
+      </TD>
+     </TR>
+      <TR>
+      <TD  BGCOLOR="#CCE6FF">
+        <B>Partial address to search on</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+       <INPUT TYPE="TEXT" NAME="search" SIZE=30 MAXLENGTH=100 VALUE="">
+      </TD>
+     </TR>
+     <TR>
+      <TD BGCOLOR="#CCE6FF"><B>Fire when ready</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+        <INPUT TYPE="submit" VALUE="GO GET'EM!"> 
+        <INPUT NAME="action" TYPE="hidden" VALUE="LIST">
+      </TD>
+      </TR>
+      </TABLE>
+     </FORM>
+
+     <FORM>
+     <TABLE WIDTH=500 BGCOLOR="#CCCCCC" BORDER=1 CELLPADDING=5 CELLSPACING=0>
+      <TR>
+       <TD COLSPAN=2 BGCOLOR="#CCCCCC">
+        <CENTER><FONT SIZE=+1><B>Maintain Letters</B></FONT></CENTER>
+      <FONT SIZE=-1 FACE="ARIAL">
+      To create a new form letter file, select the YES button for
+      <I>Create new letter</I>. To edit an existing letter, simply
+      pull down on the selector bar and pick the desired letter file.
+      Click on DO-IT! when ready.
+       </FONT>
+       </TD>
+      <TR>
+      <TD  BGCOLOR="#CCE6FF">
+        <B>Please select a letter file</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+     <SELECT NAME="lfilename">
+<OPTION VALUE="testing.ltr"> testing.ltr
+<OPTION VALUE="another.ltr"> another.ltr
+<OPTION VALUE="12345.ltr"> 12345.ltr
+</SELECT>
+
+      </TD>
+     </TR>
+     <TR>
+      <TD BGCOLOR="#CCE6FF"><B>Create a new letter?</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+        <INPUT TYPE="radio" NAME="newfile" VALUE="NO" checked>NO
+        <INPUT TYPE="radio" NAME="newfile" VALUE="YES">YES
+      </TD>
+      </TR>
+
+     <TR>
+      <TD BGCOLOR="#CCE6FF"><B>Fire when ready</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+        <INPUT TYPE="submit" VALUE="DO IT!"> 
+        <INPUT NAME="action" TYPE="hidden" VALUE="EDIT">
+      </TD>
+      </TR>
+      </TABLE>
+     </FORM>
+
+     <FORM>
+     <TABLE WIDTH=500 BGCOLOR="#CCCCCC" BORDER=1 CELLPADDING=5 CELLSPACING=0>
+      <TR>
+       <TD COLSPAN=2 BGCOLOR="#CCCCCC">
+        <CENTER><FONT SIZE=+1><B>Send out Mailing</B></FONT></CENTER>
+      <FONT SIZE=-1 FACE="ARIAL">
+      This form allows you to send out e-mail to your subscribers.
+      Use the selector bars to pick your mailing list and form letter
+      file. You may also enter a subject line and return e-mail address.
+      Of course- <B>be very careful to pick the correct letter and
+      list before sending!</B> As the mail is being sent, you will
+      see each address and it's status displayed. In the event the 
+      script is interrupted, you will know where it left off.
+      Click on MAIL-EM! when ready.
+       </FONT>
+       </TD>
+      <TR>
+      <TD  BGCOLOR="#CCE6FF">
+        <B>Please select a LIST file</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+     <SELECT NAME="filename">
+<OPTION VALUE="file1.mbz"> file1.mbz
+<OPTION VALUE="file2.mbz"> file2.mbz
+</SELECT>
+
+      </TD>
+     </TR>
+      <TR>
+      <TD  BGCOLOR="#CCE6FF">
+        <B>Please select a LETTER file</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+     <SELECT NAME="lfilename">
+<OPTION VALUE="myletter.ltr"> myletter.ltr
+<OPTION VALUE="bruce.ltr"> bruce.ltr
+<OPTION VALUE="12345.ltr"> 12345.ltr
+</SELECT>
+
+      </TD>
+     </TR>
+
+      <TR>
+      <TD  BGCOLOR="#CCE6FF">
+        <B>From</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+       <INPUT TYPE="TEXT" NAME="from" SIZE=25 MAXLENGTH=100 VALUE="yourname@xxxyyyzzz.com">
+      </TD>
+     </TR>
+
+      <TR>
+      <TD  BGCOLOR="#CCE6FF">
+        <B>Subject Line</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+       <INPUT TYPE="TEXT" NAME="subject" SIZE=25 MAXLENGTH=100 VALUE="">
+      </TD>
+     </TR>
+
+     <TR>
+      <TD BGCOLOR="#CCE6FF"><B>Fire when ready</B>
+      </TD>
+      <TD BGCOLOR="#CCE6FF">
+        <INPUT TYPE="submit" VALUE="MAIL'EM!"> 
+        <INPUT NAME="action" TYPE="hidden" VALUE="SENDMAIL">
+      </TD>
+      </TR>
+      </TABLE>
+     </FORM>
+
+     </TD>
+     </TR>
+     </TABLE>
+
+   </TD>
+  </TR>
+ </TABLE>
+<H1>SNAPSHOT OF THANK-YOU!</H1>
+
+<TABLE WIDTH="510" BORDER="1" CELLPADDING="3" BGCOLOR="#0066cc">
+ <TR>
+ <TD>
+  <TABLE WIDTH="500" BORDER="1" CELLPADDING="5" BGCOLOR="#99CCFF">
+   <TR>
+    <TD>
+      <CENTER>
+      <FONT FACE="ARIAL">
+      &nbsp;
+      <P>
+      <H1>Thank You ;-)</H1>
+      <B>Your e-mail address has been added to our mailing list.<BR>
+      Please click on the link below to return <BR>
+      to the page you were last on.
+      <P>
+      <A HREF="http://bignosebird.com/carchive/nomodomo/subscribe.html"><B>http://bignosebird.com/carchive/nomodomo/subscribe.html</B></A></B>
+      <P>
+      <FONT SIZE=1><B>Another FREE script from 
+      <A HREF="http://bignosebird.com/">BigNoseBird.Com</A></B><BR>
+      </FONT>
+      <P>
+      &nbsp;
+    </TD>
+   </TR>
+  </TABLE>
+  </TD>
+ </TR>
+</TABLE>
+
+</CENTER>
+
