@@ -1,0 +1,133 @@
+UPGRADING TO DCFORUM99 AND DCFORUMLITE FROM DCFORUM97N
+DO NOT USE THIS SCRIPT IF YOU OWN DCFORUM97
+=================================================================
+
+Originally, the threads in
+were simply HTML files.  With DCF99,
+we decided to store each thread as a text-delimited database.
+Instead of dynamically generating each thread, however, an HTML thread
+would be created each time this text file is modified.  So, while
+the navigation experience is the same, the forum data is portable.
+
+In doing so, you must convert all your HTML threads to these data files,
+and then recreate those threads by running UPDATE THREADS from your
+DCAdmin.  The script that will help you migrate is conv_97N_99.cgi
+
+NOTE: THIS CONVERSION WILL ONLY WORK IF YOU DID NOT MODIFY OR CUSTOMIZE
+THE THREAD LAYOUT-THAT IS, YOU DIDN'T MODIFY ANY PORTIONS OF
+dcboard.cgi's html_main_output and create_message.
+THIS DOES NOT INCLUDE CUSTOMIZATION YOU MAY HAVE MADE TO html_template.pl.
+IF YOU DID MODIFY ANY ONE OF THE ABOVE FUNCTIONS OR YOU'RE NOT SURE,
+PLEASE CONTACT dc@dcscripts.com with subject heading "97N to 99 Help".
+
+PLEASE FOLLOW THE INSTRUCTION AS STATED.  DO NOT SKIP A STEP
+
+UPGRADE PROCEDURE
+=================================================================
+1. Backup
+2. Convert Data format by running conv_97N_99.cgi
+3. Install DCForum99
+
+I. BACKING UP EXISTING FILES
+=================================================================
+
+1) Let your site users be aware that the forum will be down
+for an hour or so.
+
+2) Download DCForum97N files from your /cgi-bin/dcforum directory
+   to your PC and save it as backup.
+
+3) Delete Sessions and Library directories and all the files in them.
+
+II.  CREATING THREAD DATABASE FILES
+=================================================================
+
+The first step of migrating forum DCForum97N to DCF99 Ver 1.1
+is to create thread database from your existing HTML files.
+This is done by running conv_97N_99.cgi.  Doing so, it will create
+forum_info.txt, conf_info.txt, and *.txt files in FORUMDIR/Data directories.
+It will also create FORUMDIR/EMail directory which is used by DCF99.
+
+1) From DCF99 package, upload cgi-lib.pl, dclib.pl, dcforumlib.pl, 
+and dcforumlib2.pl to your cgi-bin/dcforum directory.
+
+2) Edit conv_97N_99.cgi - you need to edit the followin variables:
+
+   $path - directory path to your current dcforum cgi-bin directory
+
+   # If your setup files are named differently, then
+   # modify lines below
+
+   require "$path/dcforum97.setup";
+   require "$path/dcadmin97.setup";
+   require "$path/dcboard97.setup";
+
+3) Upload conv_97N_99.cgi to your server and chmod 755
+4) Run conv_97N_99.cgi using your browser.
+
+At this point, you should see output like:
+
+Creating forum_info.txt.....Created forum_info.txt
+Creating conf_info.txt.....Created conf_info.txt
+Processing d:/scripts/beta/htdocs/oldforum/Forum1
+==================================
+.........................................
+Processing d:/scripts/beta/htdocs/oldforum/Forum1/188.html
+
+0|0|testing|abc||12:50:29|2/23/1999| testing testing 
+7|1|Testing|none|none@nonone.com|18:50:18|3/03/1999| penis, sex cockerspaniel 
+3|1|testing4|jkl||12:53:33|2/23/1999| testing4 
+9|2|reply testing4|testing4||12:08:45|3/12/1999| reply testing4 
+1|1|testing2|xyz||12:51:31|2/23/1999| testing2 testing2 
+2|2|testing3|ghi||12:52:51|2/23/1999| testing3 testing3 
+4|3|test|Test|test@text.com|13:47:11|2/23/1999| test 
+8|4|dkfjdk|fgf|fgf@ald.com|21:59:17|3/11/1999| dkfjdk 
+6|4|dsfdsf|sdfdsafs||14:15:04|3/02/1999| fdsafdsf 
+10|5|Just testing|The Tester||19:54:27|3/14/1999| tasting tasting, hmmm good.BR
+.........................................
+Processing d:/scripts/beta/htdocs/oldforum/Forum1/195.html
+
+0|0|Theme 1|Andy||14:23:58|3/14/1999| wow! 
+1|1|4|2||14:26:21|3/14/1999| 5 
+
+etc,etc, etc
+
+If you do not get an output like this or you are not sure, 
+PLEASE CONTACT US at support@dcscripts.com.  !!!DO NOT GO ANY FURTHER!!!
+
+5) If you browser output did look OK, then run
+
+conv_97N_99.cgi?doit
+
+6) Delete every file in your cgi-bin/dcforum directory.
+   You may want to save html_template.pl (template file) to
+   help you customize dcforum.htmlt (the new template file).
+
+   Now you are ready to install DCF 99
+
+III Install DCForum 99
+============================================================
+
+1) Follow the instruction in install_nt.txt or install_unix.txt...
+
+   NOTE: Be sure to specify correct path for $maindir - this should be the
+   same as how it is defined in your current dcforum setup file.
+
+   NOTE: Be sure to update your image icons...some icons are new
+
+   MAKE SURE YOU REGISTER AS THE ADMIN AND DO NOTHING ELSE.
+
+2) At this point, you should already see conference and forums...also,
+   you should be able to navigate from forums to main listings.
+   The only thing that need to be changed is the message (topic format).
+   This is outlined in setup 4).
+
+3) Before you run update_threads, you may want to edit dcforum.htmlt template file.
+   This is just an HTML file so it should be easy to modify.  This file
+   replaces your html_template.pl
+
+4) To create topics using the new template, we need to update the threads.
+   To do this, log on to dcadmin and run update_threads.
+
+
+If all goes well, you should be all set!
