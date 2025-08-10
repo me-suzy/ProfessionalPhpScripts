@@ -1,0 +1,5 @@
+Anything in this file is e-mailed to visitors
+who submit their URL to your search engine.
+To maintain compatibility with older e-mail clients
+you should limit the length of any line in this file
+to 70 characters or less.
