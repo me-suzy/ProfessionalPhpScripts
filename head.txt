@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<TITLE>EasySearch</TITLE>
+</HEAD>
+<BODY BGCOLOR=FFFFFF TEXT=000000 LINK=FF0000 ALINK=FF0000 VLINK=FF0000>
+<CENTER>
+<FONT FACE="arial,helvetica" SIZE=2 COLOR=000000>
+<H1>EasySearch</H1>
+<A HREF="/search/">Home</A>|
+<A HREF="/cgi-bin/easysearch.cgi?action=showadd">Add URL</A>|
+<A HREF="/cgi-bin/easysearch.cgi?action=newurls">New URLs</A>|
+<A HREF="/cgi-bin/easysearch.cgi?action=randomurl">Random URL</A>
+</FONT>
+<HR WIDTH=400>
+</CENTER>
