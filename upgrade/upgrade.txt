@@ -1,0 +1,17 @@
+
+Upgrading from older versions
+-----------------------------
+
+If you already have previous version of TopSite 2000 installed on your system, 
+you have to do following before running crt.cgi:
+
+1. Run sqlgrab.cgi 
+2. Check that generated sites.sql file is complete 
+3. Run sqldrop.cgi (Note: It will destroy all tables with all top site data!)
+4. Run crt.cgi from new Top Site version
+5. Run sqlput.cgi to import old database 
+
+Note: this is not warranted that all stats and clicks will be imported 
+completely but all membership information will be saved.
+
+
