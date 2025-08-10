@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<TITLE>FREE Shopping Cart - Commerce.cgi</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<div align="center">
+  <center>
+
+<TABLE WIDTH="90%" BORDER="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+<TR>
+<TD WIDTH="100%" BGCOLOR="#FFFFFF">
+
+<!--HEADER-->
+<SCRIPT LANGUAGE="Javascript" SRC="http://www.commerce-cgi.com/jsource/distHeader.js">
+</SCRIPT>
+<!--END HEADER-->
+
+<CENTER>
+<FONT FACE="Arial">
+<b><font size="5">Congratulations<br>
+You've installed Commerce.cgi 3.01!</font></b><font size="5">
+<BR>
+</font>
+<BR>
+</FONT>
+<FONT FACE="Arial" SIZE="2" COLOR="#000000">
+<b>Please choose a sample category below</b><br>
+<br>
+<a href="commerce.cgi?product=ecommerce&cart_id=%%cart_id%%">E-Commerce</a>
+| <a href="commerce.cgi?product=web_design&cart_id=%%cart_id%%">Web Design</a> 
+| <a href="commerce.cgi?product=perl_cgi&cart_id=%%cart_id%%">PERL/CGI</a> 
+| <a href="commerce.cgi?product=affiliate&cart_id=%%cart_id%%">Affiliate Programs</a> 
+</FONT>
+</CENTER>
+
+<font face="Arial">
+
+<BR>
+</font>
+<center><b><font size="+1" face="Arial" color="#FF0000">PLEASE READ EVERYTHING ON THIS PAGE!</font></b><table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" bgcolor="#000000">
+  <tr>
+    <td width="100%"><span style="background-color: #000000"><b>
+    <font face="Arial" size="4" color="#FFFFFF">About this page</font></b></span><b><font size="4" face="Arial" color="#FFFFFF"><span style="background-color: #000000">:</span></font></b></td>
+  </tr>
+</table>
+</center><font face="Arial"><br>
+The page you are currently viewing is called <strong>frontpage.html</strong> and resides in the
+<strong>/cgi-bin/store/html</strong> directory. You should ONLY be viewing this page by accessing 
+the complete URL to commerce.cgi (something like <b>http://www.your_domain.com/cgi-bin/store/commerce.cgi</b>), 
+NOT by linking directly to frontpage.html!!! By default, <strong>commerce.cgi</strong> 
+loads frontpage.html as the homepage - the page needs to be parsed out through the script.
+</font>
+<p>
+<font face="Arial">Open up frontpage.html in a text editor and view the source code (Don't just view the source code 
+through the web browser or what I'm saying won't make sense). Notice the code for the category links above. For example, <strong>commerce.cgi?product=java&cart_id=%%cart_id%%</strong> displays
+all of the products from the database that are in the <strong>java</strong> category. The <b>cart id=%%cart_id%%</b>
+tells the script to add in the numeric cart id when the page is parsed through the script. In other words, the cart id
+IS NOT hardcoded into the source code of the page, but is added dynamically to the page when it is displayed. This makes the script more accessible to 
+users that do not accept cookies.</font><p>
+<font face="Arial">Please note: this page (frontpage.html) is just a static html page that is processed through
+the script. When you create new categories of products, you'll need to manually add links to those
+categories on this page. Category links do not get added to this page automatically (I get asked that question *a lot*).</font><p>
+&nbsp;<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" bgcolor="#000000">
+  <tr>
+    <td width="100%"><font face="Arial" color="#FFFFFF" size="4">
+<strong>Store Manager:</strong></font></td>
+  </tr>
+</table>
+<p>
+<font face="Arial">Store Manager can be accessed
+<a target="_TOP" href="protected/manager.cgi">here</a>. 
+This is were you can change your store settings, or edit/add/delete products in 
+your database.</font><p>
+<font face="Arial">Bookmark your Store Manager link, and make sure to remove the link displayed above when you re-design this page.</font><p>
+&nbsp;<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" bgcolor="#000000">
+  <tr>
+    <td width="100%"><b><font color="#FFFFFF" face="Arial" size="4">Support:</font></b></td>
+  </tr>
+</table>
+<p>
+<font face="Arial">Commerce.cgi is open source freeware and is distributed <strong>without 
+free support</strong>. Be sure to study the <a href="http://www.commerce-cgi.com/cgi-bin/store/commerce.cgi?page=readme.html" target="_NEW">Installation Instructions</a> closely.
+<a href="http://expressproducts.net">Internet Express Products</a> also maintains a
+<a target="_NEW" href="http://www.commerce-cgi.com/mailing_list.htm">Mailing List</a> and <a href="http://www.commerce-cgi.com/support/bbs/index.html" target="_NEW">Support Forum</a> and we
+suggest you visit these resources. </font>
+<p>
+<font face="Arial">We also have a <b>
+<a href="http://www.commerce-cgi.com/members">members area</a></b> where for a 
+small fee you can have access to a large number of custom modifications that we 
+have written for this script. Before you spend too much time and effort making 
+any modifications to the script you may want to check out the ones that we have 
+already done. You will probably find that it is well worth the small price for 
+the amount of time and effort it will save you.</font><P>
+<font face="Arial">Thank you,<br>
+Larry Wagar<br>
+Internet Express Products<br>
+<a href="http://expressproducts.net">http://expressproducts.net</a></font><P>
+
+</TD>
+</TR>
+</TABLE>
+
+  </center>
+</div>
+
+</BODY>
+</HTML>
