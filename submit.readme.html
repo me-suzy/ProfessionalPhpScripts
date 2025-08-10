@@ -1,0 +1,280 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>SimpleSubmit Pro 3.0</title>
+	</head>
+
+	<body bgcolor="white" text="black" link="navy" alink="blue" vlink="navy">
+		<center>
+			<table width="100%" bgcolor="#ffcc33" cellspacing="0" cellpadding="5" bordercolor="#003399" border="1">
+				<tr>
+					<td><font color="#003399" face="'Arial Black',Arial,Helvetica" size="5"><b>SimpleSubmit! Pro </b></font></td>
+				</tr>
+			</table>
+		</center>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">SimpleSubmit Pro 3.1, Installation and Usage Instructions<br>
+		Updated 09/14/00</font></p>
+		<ul>
+			<li><A href="#system"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">System Requirements</font></A>
+			<li><A href="#support"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Technical Support</font></A>
+			<li><A href="#installation"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Installation</font></A>
+			<li><A href="#options"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Setup Options</font></A>
+			<li><A href="#variables"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Setup Variables</font></A>
+			<li><A href="#tab"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Updating The .tab file</font></A>
+			<li><A href="#usage"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Using SimpleSubmit</font></A>
+			<li><A href="#custom"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Customizing SimpleSubmit</font></A></li>
+		</ul>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+		<hr>
+		</font>
+<P></P>
+		<p><a name="system"></a>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>System Requirements &nbsp;</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<ul>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">UNIX or Windows 95/98/NT/2000 Web Server</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Perl 5.0 or higher</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Perl Modules Required:</font>
+			<ul>
+				<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">CGI.pm </font>
+				<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">LWP.pm</font>
+				<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Socket.pm</font></li>
+			</ul></li>
+		</ul>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">SimpleSubmit will not run, displaying a 500 Server Error if you have an outdated version of Perl installed. If you have a current version of Perl, but are missing some modules, SimpleSubmit will tell you which modules are missing. In general, your system admin will need to install Perl and the required modules. If you administrate your own server, you can download Perl and all required modules from <a href="http://www.cpan.org/">http://www.cpan.org/</a> or <A 
+href="http://www.activestate.com/">http://www.activestate.com/</A> </font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b><a name="support"></a></b></font>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>Technical Support&nbsp;</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Technical support for VerySimple scripts is provided through the VerySimple support forum at <a href="http://www.verysimple.com/public/">http://www.verysimple.com/public/</a> If you have questions or problems, you may find it already answered there. If it is not answered, you can post a question and receive e-mail when an answer is posted. Because VerySimple is mostly the spare-time work of one person, there is no company to call or e-mail for support. VerySimple software depends upon the support of it's users. Since this software is offered for free, please consider visiting the support forum and contributing your knowledge.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>About 500 Server Errors</b>: Before you post a message or inquire about a 500 server error, you will need more information. A 500 server error is not enough information to troubleshoot your problem. It basically means that the web server has no idea what went wrong, so it didn't display the page. To see what the problem is, you need to see what the <i>real</i> error message is. There are two ways to find 
+the real error message: check the server error logs, or run the script from the 
+command line.&nbsp; The location of your server error logs depends on your server configuration.&nbsp; (See "Running SimpleSubmit from the UNIX or DOS command line" below for more information) </font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b><a name="installation"></a></b></font>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>Installation</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Download submit.zip to your local computer or directly to your web server and extract the files using your preferred zip unarchiving software.</font></p>
+		<ol>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Upload or copy all files to your web server. (FTP users: Be sure to use ASCII mode) Save the files in a directory that allows web visitors to access and execute CGI scripts, such as /cgi-bin/. (Contact your system admin or refer to your host site support pages if you don't know)</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">If necessary, change the file permissions allowing web visitors to execute submit.cgi and submit.setup.cgi. (UNIX systems generally require you to set permissions. Windows systems generally do not.)</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Open submit.setup.cgi using your preferred web browser. (for example, http://www.yoursite.com/cgi-bin/submit.setup.cgi</font></li>
+		</ol>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b><a name="options"></a></b></font>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>Setup Options</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">         
+           When you first run 
+the SimpleSubmit setup application, you will be prompted  to run standard setup, advanced 
+setup or update the .tab file.&nbsp; It is recommended that you first use standard setup to get the script up and running.&nbsp; Once you have the script working properly, you may want to go back and customize it using advanced setup. Standard setup requires only one configuration variable and installs SimpleSubmit with the options that are most common for personal use.&nbsp; Standard setup installs SimpleSubmit using the "Ban All" security mode, no "thank-you message", no usage logging and maximum of 10 URLs at one time.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">  If you use SimpleSubmit as a service to other webmasters and/or promote it as your own service, you will need to run advanced setup. You will need to provide more information to get started, however you can run the setup program as many times as you like and your previous settings will be retained. If you should ever wish to restore the default settings, simply run the standard setup.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">        
+           Advanced setup 
+lets you choose between the two security modes: "Ban All Domains by Default," 
+or "Allow All Domains by Default."&nbsp;To prevent abuse of you server, it is recommended 
+that you choose "Ban All" unless you understand what you are doing. "Ban 
+All" means that <EM>only </EM>domains which you specify                                             may use SimpleSubmit on your server. This prevents abuse because you have total control over which domains are allowed to submit. "Allow All" mode does the exact opposite. All domains are allowed by default unless you specifically ban them.&nbsp; It is necessary to use "Allow All" if you want to provide SimpleSubmit as a service to other webmasters, since you don't know the domain names of the people who will be using your service.&nbsp; However, "Allow All" opens your site to possible abuse. If you choose this security mode, it is recommended that you also enable logging and monitor the log file regularly.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b><a name="variables"></a></b></font>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>Setup Variables</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<ul>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Authorized Domains</b>: In "ban all" security mode, this provides the list of all domains that can use SimpleSubmit.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>.cfg File Location</b>: Advanced setup allows you to rename or place the .cfg file in an alternate directory. The path is relative from the directory where submit.cgi is located.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Banned Domains</b>: In "allow all" security mode, this is a list of all domains that are banned from using SimpleSubmit.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Sendmail Path/SMTP Server</b>: In order to send the e-mail thank-you message, a path to sendmail or SMTP server is needed. You only need to provide one. Setup will attempt to determine the best option based on your operating system and domain name. If do not want to send a thank-you message or your system doesn't support it, then leave both of these fields blank.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>E-mail Template File</b>: This is the file that is used as a template for the thank-you message. You can customize this file with your own personalized thank-you message.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>E-mail Message is Sent From</b>: This is the senders e-mail address for the thank-you message.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>E-mail Subject</b>: The subject of the thank-you message.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>E-mail Message Format</b>: You can send the thank-you message in plain text or HTML format. </font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Log File</b>: SimpleSubmit will track all usage to a file in tab-delimited format. If you do not wish to log usage, leave this field blank. Note that you should monitor this file if you have logging enabled. The file can grow large if you have a busy site. To open the logfile, you can use any database or spreadsheet program that imports tab-delimited files (such as MS Excel, MS Access, etc.).</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Maximum URLs</b>: To prevent abuse of your server, you can specify the maximum number of URLs that can be submitted at one time. </font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Page Header/Footer Template File</b>: The design of SimpleSubmit can be completely customized by editing the page header and page footer files. If you open these files with a text editor, you will see that they are simply standard HTML files. The header file is included at the top of the SimpleSubmit page and the footer file is included at the bottom. </font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Border Color</b>: The background color of the horizontal separator bars. You can customize these to match your custom design.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Border Font Color</b>: The font color of the horizontal separator bars.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>.tab File Location</b>: The location of the .tab database file.</font></li>
+		</ul>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><a name="tab"></a></font>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>Updating The .tab File</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"> The .tab file is a database containing information about the search engines. Since each search engine is owned by a difference company, their methods for submitting sites will vary. Most search engines change this method from time to time. Also, new search engines are added periodically to the database. By maintaining all of this information in a separate database file, SimpleSumbit can be updated easily without reinstalling the script. To see what .tab version you have, you can enter "info" (without the quotes) in the URL field of simplesubmit.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">To update your .tab file, you can simply run the setup program and select the third option "Update .tab File Only" The setup program will download the latest .tab file from verysimple.com and overwrite your existing .tab file. WARNING: If you have customized your .tab file, please be sure to make a backup copy before updating!</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">You can also add your own search engines to the .tab file. See the Customizing section of this page for more inforamation.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><a name="usage"></a></font>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>Usage</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Running SimpleSubmit From The Browser</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Using the SimpleSubmit browser interface is easy. Open submit.cgi in your preferred web browser (for example http://www.yoursite.com/cgi-bin/submit.cgi). Enter one or more URL's in the URL field (one per line). Enter your e-mail address in the e-mail field.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">If you wish to use the default search engines, then you can click submit at this point. If you want to submit only to specific search engines or one that is not a default engine, then you can click on only those engines you wish to submit.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">If you don't want a thank-you message, then you can unselect that checkbox.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Running SimpleSubmit From the UNIX or DOS command Line:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">SimpleSubmit can be run from the command line as well as through a web browser. To do this, you must have Perl installed. (Windows users can download Perl from ActiveState) All of the features of SimpleSubmit are available through the command line, however it is easier to use the browser interface. It may be preferable to use the command line interface, however, especially if you wish to schedule SimpleSubmit to run automatically.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Usage:</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>perl submit.cgi url=http://site.com/ email=me@site.com [confirm=yes] [engines=a,b,c]</i></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">[brakets] indicate optional fields.  Specify multiple sites and multiple engines by separating them with a comma. If you do not specify command line parameters when you run the script then SimpleSubmit will promt you. Enter 1 parameter per line and press &lt;CTRL&gt; d (for UNIX) or &lt;CTRL&gt; z (for DOS) when finished.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Scheduling SimpleSubmit to Run Automatically:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">One possible use of SimpleSubmit is to automatically schedule it to run and submit your site on a regular basis.  (A word of caution: don't schedule your submissions too frequently or the search engines may permanently block your site.  Once per month or less is gererally sufficient)</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">To schedule SimpleSubmit to run on UNIX, you can use the cron utility.  Usage rules vary from host to host, so check with your admin and/or support pages.  To schedule using Windows/DOS, you can use the built-in task scheduler.  Refer to the Microsoft help file for more inforamation.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">When you schedule SimpleSubmit to run automatically, it is usually helpful to have the normal output go to a file instead of to the screen - since you won't be there to see it.  This can help you troubleshoot and/or see that the last submission went as planned.  The email confirmation is also helpful, as it will email you the results.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">To send the output to a file, you simply append "&gt; filename" to the command line.  For example:</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">perl submit.cgi url=http://site.com email=me@site.com &gt; /usr/site/submitresult.txt</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><a name="custom"></a></font>
+		<table bgcolor="#003399" width="100%" cellspacing="0" cellpadding="2">
+			<tr>
+				<td><font color="#ffcc33" face="Arial,Helvetica" size="2"><b>Customizing SimpleSubmit</b></font></td>
+			</tr>
+		</table>
+		</p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Colors and Layout:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">You can completely customize the look of SimpleSubmit to match your own brand or site design. Two configuration files contain the HTML code that is used by SimpleSubmit. By default, these are <b>submit.hed</b> and <b>submit.fot</b> and they are located in the same directory as submit.cgi. (You can change the name and location of these files using advanced setup).</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">submit.hed contains all the HTML code at the top of the page and submit.fot contains the code at the bottom. submit.cgi automatically generates all of the other code. Although you cannot customize the automatically generated code, you can specify the color of the borders and fonts in advanced setup.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Edit submit.hed and submit.fot to match the design of your existing site. </font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">NOTE: although it is possible to create a design using tables and put the SimpleSubmit automatically generated text within this table, it is not recommended. The reason for this is that SimpleSubmit will display the search engine results in real-time. If you are submitting to a large number of engines, then it is helpful to see the progress. Putting the results in a table usually will cause the browser to wait until the entire page loads before displaying anything. If you do this, it will appear that SimpleSubmit is not loading, when in fact it is just taking several moments to contact all of the search engines. For this reason, it is recommended that you do not enclose the results in a table. If you need to do this to accomodate your site design, it is recommeded that you use frames instead.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">If you need to customize the main SimpleSubmit page beyond what is allowed using submit.hed and submit.fot, you can do that as well. Simply open submit.cgi in your browser and save the HTML source. Customize it as much as you like. You can then use this page as the form interface to SimpleSubmit instead of the autmatically generated page. Note, that if you update your .tab file, you may need to edit your custom design to add or remove any search engines from the select box.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Thank-You Message:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">In advanced setup you can specify that a thank-you message is sent when people use SimpleSubmit. (Sendmail or SMTP is required to use this feature) The content of this message is generated from a template file, <b>submit.tha</b>. You can edit this file to your liking.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">You can specify that that thank-you message is sent in Plain Text or HTML format in advanced setup. All e-mail clients can read plain-text. HTML format allows you to create a formatted message with layout and graphics, however not all e-mail clients support HTML e-mail. If you specify HTML format, then you will want to design submit.tha as an HTML document.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Add Your Own Search Engines:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">SimpleSubmit can be enhanced by adding your own search 
+engines.&nbsp; SimpleSubmit come pre-installed with most of the major search 
+engines, but you can add value by customizing it with your own selection of 
+search engines.&nbsp; Imagine if you have a sports-related site.&nbsp; You can 
+customize SimpleSubmit to submit to all the sports-related search engines on the 
+web.&nbsp; There are hundreds of search engines and link pages for all topics.&nbsp; SimpleSubmit will work with the vast majority of them.&nbsp; You can offer highly targeted promotion to your visitors, or simply use SimpleSubmit to make your own promotional efforts easier.&nbsp;</font></p>
+<P><FONT face=Arial,Helvetica,Geneva,Swiss,SunSans-Regular>All the information 
+about each search engine is contained in the file submit.tab.&nbsp; This is 
+simply a tab-delimited database file containing information about each engine. 
+The file can be opened with any text, spreadsheet or database application tat 
+supports tab-delimited files (such as MS Excel or MS Access).&nbsp; You can even 
+open it using notepad, however it can be tricky to read.</FONT></P>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The .tab file has several fields that are used to tell SimpleSubmit how each particular engine works. To add a new engine, you simply add a new line to the end of the file and fill in each field with the appropriate information.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">To add a new engine, you will have to visit the site that you want to add and do a bit of detective work. Find the page that the engine provides for submitting sites. This page will contain a form with several fields and an "action" URL that the form uses to process the form. View the source of this page, submit your site and examine how the engine works.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Adding new engines might seem complicated at first. By looking at the .tab file, visiting a few of the default search engines and submitting a page directly from their site, you should be able to see how it works. The good news is that most search engines are very similar. Once you add one new engine, it will be easy to add more.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>TabFile Fields:</b></font></p>
+		<ul>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Code</b>: This is a unique code you assign to each engine. It is best to use only characters or numbers (no spaces).</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Category</b>: Category for each engine. Currently this field is not used, but future support for multiple categories is planned.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Description</b>: A brief description of the seach engine.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>HomeUrl</b>: The URL to the search engines home page. Currently this field is not used, but future support is planned. This is also helpful information to have if the submission method changes.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>LogoUrl</b>: A URL to a graphic logo for the site. Currently this field is not used, but future support is planned.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>SubmitUrl</b>: The URL to the submission processing page. Note, this is not necessarily the page where their submission form is, but the actual program or script that is used to process submissions.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Method</b>: Method is either GET or POST. This refers to the submission method requred by the search engine.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Varmap</b>: Varmap tells SimpleSubmit what the variables names are for this search engine. This tells SimpleSubmit how to send the URL, Email and any other fields to the engine. See below for more details about Varmap.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>StaticVars</b>: StaticVars are any variables that the search engine requires to process the submission that are not provided by the webmaster. As an example example, a certain search engine may require "action=submit" for every submission so that the form processor know what to do with the data. You can add as many static variables as necessary.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Success</b>: So that SimpleSubmit knows whether or not the submission succeeded, it parses the results from the search engine and looks for a "Success" message. This is simply any bit of text that appears on the search engines results pages when the submission is successful. For example, a certain engine may display "Thank You" when your submission was accepted. Be sure that the text you specify does not appear if the submission failed, or else SimpleSubmit will always think that the submissions to this engine were successful.</font>
+			<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Default</b>: 1 = yes, 0 = no. This specifies whether this search engine is a default when submitting your sites.</font></li>
+		</ul>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>More About theVarmap Field:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">                                                  The VarMap field may seem confusing at first, but if you look at the tab file and examine the search engines, you'll see that it is actually not that complicated.</font></p>
+<P><FONT face=Arial,Helvetica,Geneva,Swiss,SunSans-Regular>SimpleSubmit 
+essentially allows you to forward the information in one HTML form to multiple 
+search engines. However, each of those engines has a different system for 
+accepting input. For example, Altavista expects the URL field to be called "q", 
+while Excite expects a field called "url." SimpleSubmit needs to know how to 
+send your information to each unique engine. To do that, the Varmap field is 
+used to map the fieldname on the SimpleSubmit HTML form to the fieldname used by 
+the search engine.</FONT></P>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"> On the SimpleSubmit HTML form, the URL field is called 
+"url" and the email field is called "email." To add a new engine, we simply need 
+to know how these two fields <EM>map </EM>     to the 
+new search engine. For example, say we add an engine that expects a field "p" to contain the 
+URL and a field "e" to contain the email address. In this case, the 
+Varmapforthisenginewouldbe"url=p,email=                                           e"&nbsp; Say we add an another engine that expects a field "site" to contain the URL and a field "contact" to contain the email address. In this case, theVarmapforthisenginewouldbe"url=site,email=contact"&nbsp;</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">If the engine doesn't need the email address, then you can simply leave it out of the Varmap field.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Adding Sites That Require Additional Fields:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">              If you want to add an engine that requires more fields than just URL and Email, then you can simply add those to the Varmap field as well. However, you will have to create a custom SimpleSubmit form to use as well. For example, say you want to add an engine thatexpectsURL,EmailandSiteTitle.TheVarmapmightlooksomethinglikethis"url=p,email=e,title=t." After you add the engine to the .tab file, you'll have to create a form that has a field for the title in addition to the regular SimpleSubmit fields.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="1">
+<P><FONT face=Arial,Helvetica,Geneva,Swiss,SunSans-Regular><B><A 
+name=support></A></B></FONT>
+<TABLE bgColor=#003399 cellPadding=2 cellSpacing=0 width="100%">
+  
+  <TR>
+    <TD><FONT color=#ffcc33 face=Arial,Helvetica size=2><B>Version 
+      History</B></FONT></TD></TR></TABLE></P>
+<P><FONT size=2>
+<TABLE border=0 cellPadding=3 cellSpacing=0 style="FONT-SIZE: x-small">
+  
+  <TR bgColor=#f0f0f0 valign="top">
+    <TD>3.14</TD>
+    <TD>09/14/00</TD>
+    <TD>Added TimeOut setting.&nbsp; Added 
+      HideDetailsButton setting.&nbsp; Fixed failed details when method is 
+      post. Fixed 302 Error problem when submitting to FFA links pages.&nbsp; Fixed 
+      Unitialized Variable error at vsSimpleSubmit.pm line 313.</TD></TR>
+  <TR valign="top">
+    <TD><STRONG>3.1.3</STRONG></TD>
+    <TD><STRONG>09/01/00</STRONG></TD>
+    <TD><STRONG>Total re-write of SimpleSubmit.&nbsp; No 
+      longer uses frames to submit.&nbsp; New search engine database format 
+      (.tab files)&nbsp; Too many feature changes to list.</STRONG>         
+               
+          </TD></TR>
+  
+  <TR bgColor=#f0f0f0 valign="top">
+    <TD>2.2</TD>
+    <TD>07/01/99</TD>
+    <TD>Added Javascript to automatically submit via post 
+      without clicking the button</TD></TR>
+  <TR valign="top">
+    <TD>2.1</TD>
+    <TD>04/18/99</TD>
+    <TD>Added support for engines that require submission 
+      via "post." Added option to disable referer check</TD></TR>
+  <TR bgColor=#f0f0f0  valign="top">
+    <TD>1.3.1</TD>
+    <TD>06/30/98</TD>
+    <TD>URL update for HotBot, and some internal variable changes </TD></TR>
+  <TR valign="top">
+    <TD>1.3</TD>
+    <TD>06/15/98</TD>
+    <TD>Replaced Goto.com with Northern Light </TD></TR>
+  <TR bgColor=#f0f0f0 valign="top">
+    <TD>1.2</TD>
+    <TD>06/3/98</TD>
+    <TD>URL update for HotBot </TD></TR>
+  <TR valign="top">
+    <TD>1.1</TD>
+    <TD>05/13/98</TD>
+    <TD>Added support for Planet Search and GoTo.com </TD></TR>
+  <TR bgColor=#f0f0f0 valign="top">
+    <TD><STRONG>1.0</STRONG></TD>
+    <TD><STRONG>04/28/98</STRONG></TD>
+    <TD><STRONG>Original release supporting 7 search 
+      engines </STRONG></TD></TR></TABLE></FONT></P>
+		<hr>
+		</font>
+<P></P>
+<P></P>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="1">Copyright 2000, <a href="http://www.verysimple.com/jason/">Jason M. Hinkle</a></font></p>
+		<p></p>
+	</body>
+
+</html>
