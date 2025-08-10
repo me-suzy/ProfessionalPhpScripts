@@ -1,0 +1,223 @@
+<html>
+
+    <title>[title]</title>
+
+    <body background="[background]" bgcolor="[bgcolor]" text="[textcolor]" link="[linkcolor]" vlink="[vlinkcolor]" alink="[alinkcolor]">
+
+    <center>
+
+    <table width=400>
+
+    <tr>
+
+    <td align=middle>
+
+    <font face=arial size=3>
+
+    <b>[title]</b>
+
+    </td>
+
+    </tr>
+
+    </table>
+
+    <p>
+
+    <table width=400 cellspacing=0 cellpadding=0 border=0>
+
+      <tr>
+
+      <td align=left width=400>
+
+      Have you filled out the information correctly?<p>Is this how you want it to look?
+
+      </td>
+
+      </tr>
+
+    </table>
+
+    <hr width=400>
+
+    <table border=1 cellpadding=0 cellspacing=0 width=400>
+
+     <tr>
+
+      <td>
+
+     
+
+       <table border=0 cellpadding=4 cellspacing=0 width=400 cellspacing=0>
+
+        <tr>
+
+         <td colspan=2 align=right>
+
+          <font face=arial,helvetica,verdana size=1 color=000000>
+
+          <font size=1><b>[name]</b></font>  [<A href=[url] target=_top>Homepage</a>] [<A href=mailto:[email]>Email</a>] [ [icq] ] [<a href="admin.cgi?action=modifypost&entryid=[entrynum]">M</a>]
+
+         </td>
+
+        </tr>
+
+        <tr>
+
+         <td width=20>
+
+          <font face=arial,helvetica,verdana size=1 color=000000>
+
+          [up]<br>[entrynum]<br>[down]
+
+         </td>
+
+         <td width=380>
+
+          <font face=arial,helvetica,verdana size=1 color=000000>
+
+          <b>
+
+          [comment]
+
+         </td>
+
+        </tr>
+
+        <tr>
+
+         <td width=20></td>   
+
+         <td>
+
+          <font face=arial,helvetica,verdana size=1 color=000000>
+
+          <i>[date] [time]</i><br>IP: <A href=javascript:openPrivateIP([entrynum])>logged</a><br>[browser]
+
+         </td>
+
+        </tr>
+
+       </table>
+
+      </td>
+
+     </tr>
+
+    </table>
+
+                    
+
+    <br>
+
+    <form method="post" action="signgbook.cgi">
+
+    <center>
+
+    <table border=0 cellpadding=2>
+
+     <tr>
+
+      <td align=left>
+
+       Your Name
+
+      </td>
+
+       <td align=right>
+
+       <input name="name" size=35 value="[name]">
+
+      </td>
+
+     </tr>
+
+     <tr>
+
+      <td align=left>
+
+       Your Email
+
+      </td>
+
+      <td align=right>
+
+       <input name="email" size=35 value="[email]">
+
+      </td>
+
+     </tr>
+
+     <tr>
+
+      <td align=left>
+
+       Your URL
+
+      </td>
+
+      <td align=right>
+
+       <input name="url" size=35 value="[url]">
+
+      </td>
+
+     </tr>
+
+        <tr>
+
+         <td align=left>
+
+          Your ICQ Number
+
+         </td>
+
+         <td align=right>
+
+          <input name="icq" size=35 value="[icq]">
+
+         </td>
+
+        </tr>
+
+     <tr>
+
+      <td colspan=2 align=right>
+
+       <textarea name="comment" cols=46 rows=5>[comment]</textarea>
+
+       <br>
+
+      </td>
+
+     </tr>
+
+     <tr>
+
+      <td align=right colspan=2>
+
+       Private Message?
+
+       <input type=checkbox name=private [private] value=priv>
+
+      </td>
+
+     </tr>
+
+       <tr>
+
+      <td colspan=2 align=right>
+
+      <br>
+
+      <input type="submit" value="SIGN"> <input type=reset value=RESET>
+
+      </td>
+
+     </tr>
+
+    </table>
+
+    </body>
+
+    </html>
