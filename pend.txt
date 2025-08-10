@@ -1,0 +1,17 @@
+ 
+
+<html>
+
+<title>Application under approval</title>
+
+<body bgcolor=\"\#D5BBD3\">
+
+The  <b>system adminsitrator </b> has been advised of your request for membership with our community and shall respond to you as soon as they have reviewed your account. Thankyou for your application.
+
+</body>
+
+</html>
+
+ 
+
+
