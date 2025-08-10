@@ -1,0 +1,265 @@
+DCForum2000 Installation guide for UNIX, LINUX, ..., NON-NT
+=======================================================================
+
+NOTE: If you are upgrading from DCForum99 Ver 1.1, please
+use upgrade_99_00.txt
+
+Installation notes for LINUX, FreeBSD, UNIX, and other UNIX variants 
+
+Installing and setting up DCForum consists of following steps:
+
+0) Installation overview
+1) Basic Setup (recommended setup)
+2) Edit *.cgi files and dcforum.setup
+3) Upload files to your web server
+4) Start dcadmin.cgi and register as admin
+5) Create Conferences and Forums
+6) Customize dcforum.htmlt, the template file
+
+PLEASE READ CAREFULLY AND FOLLOW THE DIRECTION EXACTLY AS DESCRIBED.
+
+0. Installation Overview
+========================================================================
+
+   If you don't know what chmod is...
+   ---------------------------------------------------------------------
+   Typically, installing any Perl CGI programs on UNIX systems involves 
+   creating directories, uploading files, and then changing file and
+   directory permissions. If you know how to chmod or have done 
+   CGI installation before, skip to the "Basic Setup" section below.  
+   If you do not know what chmod is or how to specify it, then you 
+   need to read the next couple paragraphs.
+   
+   In order for perl CGI programs to run on your web server, they must have
+   proper file permissions.  Additionally, if your perl CGI program
+   needs a permission to create files or to read/write to files,
+   then directories and files must all have proper permissions.
+   Without going into detail, this basically means that certain directories
+   need to be set to 777, which grants read/write/execute permission to
+   owner/group/world.  You also need to set *.cgi files to 755, which grants 
+   read/write/execute permission to the owner and read/execute to the group 
+   and world.
+   
+   If you have telnet access, you can just type:
+   
+   chmod 755 file.cgi
+   
+   Or, if you are using an FTP program, there should be a function that
+   allow you to change the permission by selecting a file on your server.
+   If you have more questions, please contact support@dcscripts.com
+   
+   At this point, if you are not sure where to start, let me suggest
+   that you consider an installation option ($35 extra).  We'll
+   install it for your on your web site usually within next 24 hours.
+   
+
+1) Basic Setup (recommended setup)
+========================================================================
+IMPORTANT NOTE: PLEASE MAKE SURE TO USE ASCII 
+MODE FOR UPLOADING SCRIPTS FILES (EXCEPT IMAGE FILES, USE BINARY MODE)
+
+   Directory vs URL
+   ---------------------------------------------------------------------------   
+   Please recognize the difference between a "directory" and an "URL".
+   By directory we mean the physical location of a folder on your server.
+   For example, "/usr/home/https".  On the other hand, by URL we mean 
+   the WWW address of your website.  For example, "http://www.yoursite.com"
+
+   Setting up DCForum
+   ---------------------------------------------------------------------------   
+   There are more than one way to setup DCForum system.
+   The following setup what we recommend.
+
+   /cgi-bin directory
+      |---/dcforum (755)
+              |---dcboard.cgi (755)
+              |---dcadmin.cgi (755)
+              |---dcforum.htmlt (644)
+              |---dcforum.setup (644)
+              |----/private_forums (777)
+                      |----index.html
+              |---User_info (777)
+                      |---index.html (to hide directory)
+              |---Lib (755)
+                      |---all *.pl files (644)
+
+   /htdocs directory
+        |----/dcforum (777)
+               |---/admin.html
+               |---/Images (755)
+                      |----index.html 
+                      |----All gif files 
+
+   NOTE:
+
+   - /cgi-bin/dcforum must be set up to execute files as scripts
+   - /cgi-bin/User_info must have 777 permission
+   - /htdocs/dcforum must have 777 permission
+   - /cgi-bin/dcforum/private_forums must have 777 permission
+   - (Again)For image files, please us BINARY when you FTP your files For 
+      all other file, please use ASCII mode.
+
+   IMPORTANT SECURITY INFORMATION - On some servers, users can point 
+   their browser to your /cgi-bin/dcforum/dcforum.setup and have the file
+   display this page.  This is a major security problem since 
+   dcforum.setup information contains your setup information such as
+   User_info directory name and the user database name.  Knowing these
+   information one can access your user database and know the administrator's
+   username and password.
+   
+   To avoid this problem, do the following:
+   - Rename User_info directory to some name difficult to guess
+   - Edit dcforum.setup and make sure $password_file_dir is set to this
+     new directory name
+   - Rename dcforum.setup -- for example, dcforum_somerandomnumber.stup
+   - For dcboard.cgi, and dcadmin.cgi, modify the
+     'require' statement to require this new setup file
+
+   
+   Setting up your server
+   ---------------------------------------------------------------------------   
+   Here is the step by step instruction on setting up DCForum.
+   In this section, we use our recommended setup.
+   
+   a. Change directory to your root html directory.  By root html directory
+      we mean the directory corresponding to your home site URL.
+
+   b. Create a subdirectory called "dcforum" - this is where your
+      public forums will be stored.  Chmod this directory to 777.
+
+   c. Upload admin.html to "dcforum" directory.
+
+   d. Create a subdirectory called "Images" in "dcforum" directory.
+
+   e. Change directory to "Images" and upload all the image files to
+      this directory. REMEMBER TO USE BINARY MODE WHEN YOU UPLOAD IMAGE FILES.
+      You can either use the default icons or the netscape icons.
+
+   f. Change directory to your root cgi-bin directory.  By root cgi-bin directory
+      we mean the directory corresponding to your cgi-bin URL.
+
+   g. In your cgi-bin directory, create a subdirectory named "dcforum".
+
+   h. Change directory to "dcforum".
+
+   i. Create a subdirectory called "private_forums" or some name that you
+      make up - this is where your private forums will be stored.
+      Chmod this directory to 777.
+
+   j. Create a subdirectory  named "User_info" in "dcforum".
+      Chmod this directory to 777.
+
+   k. Upload index.html file to "User_info" directory - this will hide this directory
+
+   l. Create a subdirectory  named "Lib" in "dcforum".
+
+   m. Upload all *.pl files in /cgi-bin/dcforum/Lib directory of the unzipped package
+      to this "Lib" directory - BE SURE TO USE ASCII MODE. 
+      
+   o. Change directory to your /cgi-bin/dcforum directory.
+
+
+2) Edit *.cgi files and dcforum.setup
+========================================================================
+We need to edit all cgi files (those files that end with cgi extension) 
+and dcforum.setup before we upload these files to the newly created 
+/cgi-bin/dcforum directory.
+
+   You'll need to know:
+   - Full directory path to your cgi-bin and root html directory
+     If you're not sure, ask your ISP.
+
+   Editing *.cgi files
+   ----------------------------------------------------------------------- 
+   a. Open all *.cgi files in your favorite text editor.  The files 
+      you'll need to edit are:
+   
+      dcadmin.cgi
+      dcboard.cgi
+
+   b. Edit the very first line "#!/usr/bin/perl".  This is the location
+      of Perl 5 on your server.  Usually, /usr/bin/perl will work.
+      Sometime, it may be located in /usr/local/bin/perl...
+      Ask you ISP if you can't start the forum due to error.
+
+   c. Edit $cgidir variable - this is the path to the directory where
+      all your cgi scripts are located.  The default value,
+   
+     $cgidir = ".";
+
+     will work on must servers.  If it doesn't work, try using
+     full directory paths.  If you're not sure, ask your ISP
+     what the full directory path to your cgi-bin is.
+
+     HINT: Consider using install_help.cgi to help you determine
+     the correct values of $cgidir and $maindir
+
+   Editing dcforum.setup
+   ----------------------------------------------------------------------- 
+   This file is the most important file.  You must provide correct information
+   or else DCForum will not work.  At minimum, you'll need to define
+   the following variables:  See dcforum.setup for details.
+
+   $homeurl - URL to your main site
+   $platform - NT, UNIX or FREEBSD
+   $maindir - Full directory path to your /htdocs/dcforum directory
+   $mainurl - URL of $maindir
+   $cgiurl - URL of $cgidir
+
+   Upload files to your web server
+   ----------------------------------------------------------------------- 
+
+   a. Upload (USING ASCII MODE)
+
+           dcboard.cgi
+           dcadmin.cgi
+           dcforum.htmlt
+           dcforum.setup
+
+   to your /cgi-bin/dcforum directory.  Then, chmod *.cgi files to 755.
+
+
+3) Start dcadmin.cgi and register yourself.
+========================================================================
+   Start dcadmin.cgi by opening this page in your browser.  The URL should be
+   something like, http://www.yourdomain.com/cgi-bin/dcforum/dcadmin.cgi.
+   The firsttime you run this script, it will execute an init library file 
+   that will generate directories and files used by DCForum2000.
+   If all goes well, the login screen should show up.  If you get any errors, 
+   please go back and check to make sure that all path 
+   variables and permissions are set correctly.  If your not sure the paths
+   are correct, use install_help.cgi to help you determine $cgidir.
+
+   Also, check and make sure
+   that you didn't use BINARY mode when you transfer the files.  If you're still
+   stuck, use our support forum at 
+   
+   http://www.dcscripts.com/cgi-bin/dcforum/dcboard.cgi
+
+   If you are successful, click on "New User? Click here to register and 
+   create an account" link to register yourself.
+   Since you are the first person to register, you will have 'admin' user group.
+   All others will default to 'normal' user group.
+   
+4) Create Forums and other good stuff
+========================================================================
+
+   >>>Please refer to "Post Installation Configuration"
+      in the administrator user's guide<<<
+
+   The basic step to creating your forum is as follows:
+
+   0) Log on as administrator
+   1) Choose forum setting and set your preference - lots of stuff here.
+      See section 2 of the administrator user's guide.
+   3) Create conferences and forums - See section 3 of the 
+      administrator user's guide
+
+   Please refer to the administrator user's guide ($mainurl/admin.html)
+
+5) Customize dcforum.htmlt, the template file
+========================================================================
+DCForum script uses one template file for all its output.  dcforum.htmlt
+is just an HTML file that you can easily modify to customize the
+look and feel of the board.  So long as you do not remove script tags
+with "$" sign in front, you should be ok.
