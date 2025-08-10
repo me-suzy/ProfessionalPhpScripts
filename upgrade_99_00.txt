@@ -1,0 +1,133 @@
+DCForum2000 Upgrade guide for users of DCForum99 Ver 1.x
+====================================================================
+
+>>>If you are upgrading from DCForum98 or 97,
+please use the utilities in /cgi-bin/dcforum/Utilities/DCF99Utilities
+to upgrade to DCF99 before you apply this upgrade.
+
+NOTE: This update assumes that your forum is
+installed in /cgi-bin/dcforum directory.
+
+Prepare for the upgrade
+----------------------------------------------------------
+1) Backup the following files:
+   - all files in /cgi-bin/dcforum
+   - all *.txt files in /cgi-bin/dcforum/User_info
+2) Print out a copy of dcforum.setup
+3) Print out a copy of board_setup_file.txt
+4) Print out a copy of auth_setup_file.txt
+5) Delete all files in /cgi-bin/dcforum
+6) Delete all *.session and *.dat files from your User_info
+   directory
+7) Delete *.log file that are 0 bytes in size.
+8) Upload *.gif files in the Images directory to your server's
+   /htdocs/dcforum/Images directory.  USE BINARY MODE
+
+Setup
+----------------------------------------------------------
+1) Edit following files:
+   conv_forum_99_00.cgi
+   conv_database_99_00.cgi
+   dcboard.cgi
+   dcadmin.cgi
+
+   Note: conv_forum_99_00.cgi and conv_database_99_00.cgi files are in
+   in Utility/DCF2000 directory of this distribution
+
+   - Edit the very first line "#!/usr/bin/perl".  This is the location
+      of Perl 5 on your server.  Usually, /usr/bin/perl will work.
+      However, ask you ISP if you can't start the forum.
+
+   - Edit $cgidir variable - check your older copy of dcboard.cgi
+     In the older copy, we used $path variable.
+
+2) Edit dcforum.setup
+
+   Since you are upgrading, use your old copy of
+   dcforum.setup as a reference.
+
+   This file is the most important file.  You must provide correct information
+   or else DCForum will not work.  At minimum, you'll need to define
+   the following variables:  See dcforum.setup for details.
+
+   $homeurl - URL to your main site
+   $platform - NT, UNIX or FREEBSD
+   $maindir - Full directory path to your /htdocs/dcforum directory
+   $mainurl - URL of $maindir
+   $cgiurl - URL of $cgidir
+   $privatedir - private forum directory
+   $password_file_dir - path to /cgi-bin/dcforum/User_info
+
+
+Upgrade Installation
+----------------------------------------------------------
+1) Upload following files to your /cgi-bin/dcforum directory.
+   REMEMBER TO USE ASCII MODE!!!!
+
+   conv_forum_99_00.cgi
+   conv_database_99_00.cgi
+   dcboard.cgi
+   dcadmin.cgi
+   dcforum.setup
+   
+   If on UNIX, be sure to chmod *.cgi files to 755
+
+2) In your /cgi-bin/dcforum directory, create a directory
+   called "Lib" (case sensitive).  Upload *.pl files in the 
+   Lib directory of DCF2000 package to /cgi-bin/dcforum/Lib directory.
+   REMEMBER TO USE ASCII MODE!!!!
+
+
+Finishing the upgrade
+----------------------------------------------------------
+1) Run dcadmin.cgi by pointing your browser to this file.
+   It should display installation text as follows:
+
+      "Welcome to DCForum Setup Program. 
+ 
+      The program will now create required folders and files. 
+      Should there be any errors, please go back 
+      and check your settings.
+
+      Click here to continue with initial setup"
+
+   Follow the direction until the login window is displayed.
+   If there are any errors, please check your $path, $cgidir, $maindir,
+   $password_file_dir settings.
+
+2) Run conv_forum_99_00.cgi by pointing your browser to this file.
+   It should display messages telling you that all forum files are
+   processed. 
+
+3) Run conv_database_99_00.cgi by pointing your browser to this file.
+   It should display messages telling you that all forum files are
+   processed.
+
+4) FTP to your User_info directory.  Move *.log files from
+   /cgi-bin/dcforum/User_info to /cgi-bin/dcforum/User_info/Logfiles.
+   
+5) Then bring up "Forum Settings"
+   Using your old copies of board_setup_file.txt and auth_setup_file.txt,
+   reset these parameter.  You will also need to edit following parameters:
+
+   - Forum title
+   - Time offset
+   - Time zone
+   - Date format
+   - Admin email address
+   - Sendmail path
+   - SMTP server - if you are on NT
+
+   There are many new parameters that you should look over...
+   Please refer to the administrator user's guide ($mainurl/admin.html).
+
+6) DCF2000 also allows you to customize the email messages
+   Check 'Customize Emails' link in 'admin functions.
+   Please refer to the administrator user's guide ($mainurl/admin.html).
+
+7) Run update threads...depending on the number of topics and forums,
+   this may take a while
+   
+
+
+Congratulation!  You now are running on DCForum2000!!!!
