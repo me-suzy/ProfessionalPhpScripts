@@ -1,0 +1,163 @@
+ <html>
+
+    <title>[title]</title>
+
+    <body background="[background]" bgcolor="[bgcolor]" text="[textcolor]" link="[linkcolor]" vlink="[vlinkcolor]" alink="[alinkcolor]">
+
+    <center>
+
+    <table width=400>
+
+    <tr>
+
+    <td align=middle>
+
+    <font face=arial size=3>
+
+    <b>[title]</b>
+
+    <br>
+
+    </td>
+
+    </tr>
+
+    </table>
+
+    <p>
+
+    <table width=400 cellspacing=0 cellpadding=0 border=0>
+
+      <tr>
+
+      <td align=left width=400>
+
+      Oops! You forgot to fill in all the required fields.  Please make sure you've filled
+
+      these in (marked with a *).
+
+      </td>
+
+      </tr>
+
+    </table>
+
+    <hr width=400>    
+
+    <form method="post" action="signgbook.cgi">
+
+    <center>
+
+    <table border=0 cellpadding=2>
+
+     <tr>
+
+      <td align=left>
+
+       Your Name
+
+      </td>
+
+       <td align=right>
+
+       *<input name="name" size=35 value="[name]">
+
+      </td>
+
+     </tr>
+
+     <tr>
+
+      <td align=left>
+
+       Your Email
+
+      </td>
+
+      <td align=right>
+
+       <input name="email" size=35 value="[email]">
+
+      </td>
+
+     </tr>
+
+     <tr>
+
+      <td align=left>
+
+       Your URL
+
+      </td>
+
+      <td align=right>
+
+       <input name="url" size=35 value="[url]">
+
+      </td>
+
+     </tr>
+
+        <tr>
+
+         <td align=left>
+
+          Your ICQ Number
+
+         </td>
+
+         <td align=right>
+
+          <input name="icq" size=35 value="[icq]">
+
+         </td>
+
+        </tr>
+
+     <tr>
+
+      <td>
+
+      *
+
+     </td>
+
+      <td align=right>
+
+       <textarea name="comment" cols=46 rows=5>[comment]</textarea>
+
+       <br>
+
+      </td>
+
+     </tr>
+
+     <tr>
+
+      <td align=right colspan=2>
+
+       Private Message?
+
+       <input type=checkbox name=private [private] value=priv>
+
+      </td>
+
+     </tr>
+
+       <tr>
+
+      <td colspan=2 align=right>
+
+      <br>
+
+      <input type="submit" value="SIGN"> <input type=reset value=RESET>
+
+      </td>
+
+     </tr>
+
+    </table>
+
+    </body>
+
+    </html>
