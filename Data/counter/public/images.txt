@@ -1,0 +1,7 @@
+logo.gif - public counter logo
+down.gif - down sign
+up.gif   - up sign
+same.gif - same sign
+d1_0..9  - digits set 1
+d2_0..9  - digits set 2
+d3_0..9  - digits set 3
