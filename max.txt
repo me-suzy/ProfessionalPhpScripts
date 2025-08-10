@@ -1,0 +1,19 @@
+<html>
+
+<title>Maximum accounts reached</title>
+
+<body bgcolor="white">
+
+<center><b>
+
+Sorry, but we have reached the maximum number of accounts we can take at this moment <br>
+
+Please check back soon for new account acceptances
+
+</body>
+
+</html>
+
+ 
+
+
