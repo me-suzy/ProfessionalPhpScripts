@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>mcLinksCounter - Lisez moi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="Expires" CONTENT="Fri, Jan 01 1900 00:00:00 GMT">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<style type="text/css">
+<!--
+a:actif {  font-family: Verdana; color: black; text-decoration: none}
+a:link {  font-family: Verdana; color: white; text-decoration: none}
+a:visited {  font-family: Verdana; color: white; text-decoration: none}
+a:hover {  font-family: Verdana; color: black; text-decoration: none}
+-&nbsp;
+</style>
+</head>
+<body bgcolor="#C0C0C0" text="black">
+<p align="right"><font face="verdana" size="5" color="black">mcLinksCounter 1.2</font></p><hr>
+
+<table align="center" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+ <td bgcolor="#333333" colspan="2"><font face="verdana" color="white" size="2">
+ Changelog</font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>1.0</b>: Premi&egrave;re version.<br>
+ <b>1.1</b>: Administration prot&eacute;g&eacute;e par mot de passe. Donn&eacute;es d&eacute;tailll&eacute;es par lien.
+ Upgrade de 1.0 &agrave; 1.1: idem installation compl&egrave;te, mais CONSERVEZ votre table <b>mclinkscounter</b> (inchang&eacute;e) pour ne pas perdre vos liens actuels.
+  <br>
+  <b>1.2</b>: Correction bug d'&eacute;ffacement des donn&eacute;es au changement de mois. Ajout de l'affichage "TOP 10".
+ Upgrade de 1.0 ou 1.1: Comme ci-dessus.
+</font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#333333" colspan="2"><font face="verdana" color="white" size="2">
+ Installation</font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ Fichier <b>mclc.php</b>:<br>
+ Renseignez les variables <b>$host $login $pass $base</b> avec vos données personnelles, <b>$langfile</b> avec le nom du fichier langue que vous voulez utiliser, et choisissez un identifiant et un mot de passe pour <B>$admin_login</b> et <b>$admin_pass</b>.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ File <b>blank.php</b>:<br>
+ Fichier Langue &agrave; utiliser pour la traduction. Si vous voulez faire profiter tout le monde de votre travail, envoyez-le moi par  <a href="mailto:marc@phpforums.net">mail</a>. Merci d'avance.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ T&eacute;l&eacute;chargez le dossier <b>mcLinksCounter</b> sur votre serveur. (vous pouvez changer le nom).</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ Cr&eacute;ez les tables <b>mclinkscounter</b> et <b>mclinkscounter_detail</b>. (ne changez PAS les noms).<br>
+ Utilisez le fichier <b>table.sql</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ Connectez-vous sur <b>mclinkscounter/stats.php</b>. (ou nouveaunom/stats.php).<br>
+ Vous pouvez maintenant saisir vos liens avec le formulaire.<br>
+ Pour avoir un lien du type <b>&lt;a href="http://www.site.com" target="_blank"&gt;Visitez&lt;/a&gt;</b> vous allez saisir:<br>
+ &nbsp;&nbsp;Nom: <b>Visitez</b><br>
+ &nbsp;&nbsp;Cat&eacute;gorie: <b>Sites</b> (par exemple)<br>
+ &nbsp;&nbsp;URL: <b>http://www.site.com</b><br>
+ &nbsp;&nbsp;Target: selectionnez <b>_blank</b><br>
+ &nbsp;&nbsp;Clic: <b>0</b> (ou un autre nombre, si vous ne voulez pas commencer &agrave; 0)<br>
+ Ensuite vous validez et vous passez au suivant.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>Modifier</b> ou <b>Supprimer</b> un lien:<br>
+ Rien de plus facile, cliquez sur <b>modifier</b> ou <b>supprimer</b> sur sa ligne, et suivez les indications.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>Statisitques d&eacute;taill&eacute;es</b> d'un lien:<br>
+ En cliquant sur son nom, vous arrivez &agrave une page qui vous indique le nombre de clics du jour, celui de la veille, et quelques d&eacute;tails sur les cliqueurs du jour.<br>
+ En haut de la page, <b>Nettoyer la Table</b> efface ces d&eacute;tails s'ils ont plus de deux jours, pour ne pas encombrer votre Base.</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999" colspan="2"><font face="verdana" color="black" size="1">
+ <b>Enfin</b><br>
+ En haut de chaque page dans laquelle vous allez ins&eacute;rer un ou plusieurs liens, tapez ce code en tout d&eacute;but de page:<br>
+ <b>&lt;? include "chemin/mcLinksCounter/mclc.php"; ?&gt;</b> dans lequel vous indiquez le chemin relatif pour atteindre <b>mclc.php</b> depuis cette page.
+ Vous pouvez donc utiliser mcLinksCounter sur toutes les pages de votre site, il suffit de bien renseigner ce chemin en haut de chaque page.<br></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#333333"><font face="verdana" color="white" size="2">
+ Pour afficher:</font>
+ </td>
+ <td bgcolor="#333333"><font face="verdana" color="white" size="2">
+ Taper le code:</font>
+ </td>
+ </tr>
+
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Un lien sans compteur visible :<br>
+  Venez visiter <a href="#">mon site</a> tous les jours!</font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ &nbsp;<br>Venez visiter <b>&lt;? mclc_nom($PHP_SELF, "mon site"); &gt;?</b> tous les jours!</font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Un lien avec compteur visible :<br>
+  T&eacute;l&eacute;chargez <a href="#">mcLinksCounter</a> (123)</font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ &nbsp;<br>T&eacute;l&eacute;chargez <b>&lt;? mclc_nom_clics($PHP_SELF, "mcLinksCounter"); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ La liste des liens de la cat&eacute;gorie "Sites" sans compteur visible<br>class&eacute;s par ordre alphab&eacute;tique:<br><br>
+  Mes sites pr&eacute;f&eacute;r&eacute;s :<br>
+  <a href="#">Autre Site</a><br>
+  <a href="#">Beau Site</a><br>
+  <a href="#">Joli Site</a><br>
+  <a href="#">Mon Site</a><br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Mes sites pr&eacute;f&eacute;r&eacute;s :&lt;br&gt;<br><b>&lt;? mclc_catN($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ M&ecirc; liste que ci-dessus,<br>class&eacute;s par nombre de clics:<br><br>
+  Mes sites pr&eacute;f&eacute;r&eacute;s :<br>
+  <a href="#">Beau Site</a><br>
+  <a href="#">Joli Site</a><br>
+  <a href="#">Autre Site</a><br>
+  <a href="#">Mon Site</a><br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Mes sites pr&eacute;f&eacute;r&eacute;s :&lt;br&gt;<br><b>&lt;? mclc_catC($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ La liste des liens de la cat&eacute;gorie "Sites" avec compteur visible<br>class&eacute;s par ordre alphab&eacute;tique:<br><br>
+  Mes sites pr&eacute;f&eacute;r&eacute;s :<br>
+  <a href="#">Autre Site</a> (23)<br>
+  <a href="#">Beau Site</a> (57)<br>
+  <a href="#">Joli Site</a> (48)<br>
+  <a href="#">Mon Site</a> (19)<br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Mes sites pr&eacute;f&eacute;r&eacute;s :&lt;br&gt;<br><b>&lt;? mclc_catN_clics($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+ <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ La liste des liens de la cat&eacute;gorie "Sites" avec compteur visible<br>class&eacute;s par nombre de clics:<br><br>
+  Mes sites pr&eacute;f&eacute;r&eacute;s :<br>
+  <a href="#">Beau Site</a> (57)<br>
+  <a href="#">Joli Site</a> (48)<br>
+  <a href="#">Autre Site</a> (23)<br>
+  <a href="#">Mon Site</a> (19)<br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Mes sites pr&eacute;f&eacute;r&eacute;s :&lt;br&gt;<br><b>&lt;? mclc_catC_clics($PHP_SELF, "Sites"); &gt;?</b></font>
+ </td>
+ </tr>
+  <tr>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Les 3 liens (ou 5, ou 10, il suffit de pr&eacute;ciser) les plus cliqu&eacute;s de la cat&eacute;gorie "Sites" avec compteur visible, class&eacute;s par nombre de clics:<br><br>
+  Les 3 sites les plus visit&eacute;s :<br>
+  <a href="#">Beau Site</a> (57)<br>
+  <a href="#">Joli Site</a> (48)<br>
+  <a href="#">Autre Site</a> (23)<br>
+  </font>
+ </td>
+ <td bgcolor="#999999"><font face="verdana" color="black" size="1">
+ Les 3 sites les plus visit&eacute;s :&lt;br&gt;<br><b>&lt;? mclc_catCtop_clics($PHP_SELF, "Sites",3); &gt;?</b></font>
+ </td>
+ </tr>
+
+ <tr><td colspan="2" bgcolor="#666666"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">mcLinksCounter est
+      un logiciel gratuit; vous pouvez le modifier et ou le distribuer selon les
+      termes de la <a href="GNU_GPL.html">GNU General Public License</a> publi&eacute;e
+      par the Free Software Foundation, version 2 ou ult&eacute;rieure.</font>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> mcLinksCounter est
+        distribu&eacute; dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE
+        de quelque sorte que ce soit. Se reporter &agrave; la GNU General Public
+        License pour plus de d&eacute;tails.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> Vous devez
+        avoir re&ccedil;u une copie de la GNU General Public License
+        jointe &agrave; ce programme, sinon vous pouvez &eacute;crire &agrave;
+        la Free Software
+        Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA</font>.
+      </p>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="white">copyright
+        &copy; 2002 - <a href="mailto:marc@phpforums.net">Marc Cagninacci</a> - <a href="http://www.phpforums.net">PhpForums</a></font> </p>
+    </td></tr>
+ </table>
+
+
+
+</td></tr>
+</table>
+</body>
+</html>
