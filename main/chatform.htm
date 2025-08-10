@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+  <TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#663333" TEXT="#fce9c3" LINK="#0099FF" VLINK="#FF66FF" LINK="#FFFF00">
+<FORM name="logon" ACTION="../echat.cgi" METHOD="POST">
+<CENTER><table><tr><td colspan=4 align=center><big><big><i>Welcome to our Main Chatroom</i></big</big></td></tr><TR>
+	<TD VALIGN="Top">Nickname:<br>
+	  <INPUT TYPE="text" NAME="username" SIZE="15" MAXLENGTH="20"><br> </TD>
+	<TD VALIGN="Top">E-mail
+	  (optional):<br>
+	  <INPUT TYPE="text" NAME="email" SIZE="15" MAXLENGTH="50"><br> </TD>
+	<TD VALIGN="Bottom">Text Color:<br>
+	  <SELECT NAME="color"> 
+	  <OPTION SELECTED>black 
+	  <OPTION>blueviolet 
+	  <OPTION>chocolate 
+	  <OPTION>darkgreen 
+	  <OPTION>dimgray 
+	  <OPTION>fuchsia 
+	  <OPTION>maroon 
+	  <OPTION>mediumblue 
+	  <OPTION>navy 
+	  <OPTION>orangered 
+	  <OPTION>purple 
+	  <OPTION>scarlet 
+	  <OPTION>sienna 
+	  <OPTION>teal </SELECT><br> </TD>
+	<TD VALIGN="Bottom">&nbsp;<br>
+	  <INPUT type=hidden name=message value="logged on.">
+	  <INPUT type=hidden name=room value="main">
+	  <INPUT type=hidden name=frames value=yes>  
+	  <INPUT type=hidden name=to value="Room">  
+	  <INPUT type=submit name=logon value="Join Chat"></TD>
+      </TR>
+    </TABLE>
+    <P>
+  </FORM>
+</CENTER>
+<P>
+<SCRIPT language="JavaScript"> <!--
+document.logon.username.focus();
+//--> </SCRIPT>
+</BODY></HTML>
